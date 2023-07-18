@@ -58,7 +58,8 @@ namespace ProyectoFinal_23AM.Vistas
                     PkUsuario = userId,
                     Nombre= txtNombre.Text,
                     UserName = txtUserName.Text,
-                    Password = txtPassword.Text
+                    Password = txtPassword.Text,
+                    FkRol = int.Parse(SelectRol.SelectedValue.ToString())
                 };
                 services.UpdateUser(usuario);
                 MessageBox.Show("Usuario modificado");

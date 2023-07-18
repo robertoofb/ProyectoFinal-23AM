@@ -123,5 +123,21 @@ namespace ProyectoFinal_23AM.Services
                 throw new Exception("Sucedió un error " + ex.Message);
             }
         }
+        public Usuario Login(string UserName, string Password)
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    var usuario = _context.Usuarios.Include(y => y.Roles).FirstOrDefault(x=> x.UserName==UserName && x.Password==Password);
+                    return usuario;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Sucedió un error " + ex.Message);
+            }
+        }
     }
 }

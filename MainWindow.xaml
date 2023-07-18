@@ -9,9 +9,9 @@
     <Grid>
         <Label FontSize="30" Content="Login" HorizontalAlignment="Left" Height="80" Margin="129,55,0,0" VerticalAlignment="Top" Width="508" HorizontalContentAlignment="Center"/>
         <Label FontSize="15" Content="Usuario" HorizontalAlignment="Left" Height="26" Margin="323,135,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center"/>
-        <TextBox FontSize="15" HorizontalAlignment="Left" Margin="323,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtUserName" FontSize="15" HorizontalAlignment="Left" Margin="323,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27"/>
         <Label FontSize="15" Content="Password" HorizontalAlignment="Left" Height="28" Margin="323,193,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center"/>
-        <TextBox FontSize="15" HorizontalAlignment="Left" Height="20" Margin="323,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnLogin" Content="Iniciar" HorizontalAlignment="Left" Height="30" Margin="351,255,0,0" VerticalAlignment="Top" Width="64" Background="#FF5CC754" Click="btnLogin_Click"/>
+        <Button x:Name="btnLogin" Content="Iniciar" HorizontalAlignment="Left" Height="30" Margin="351,269,0,0" VerticalAlignment="Top" Width="64" Background="#FF5CC754" Click="btnLogin_Click"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Height="27" Margin="323,226,0,0" VerticalAlignment="Top" Width="120" Visibility="Visible"/>
     </Grid>
 </Window>
