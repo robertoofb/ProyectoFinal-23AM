@@ -27,7 +27,7 @@ namespace ProyectoFinal_23AM.Services
                             Nombre = request.Nombre,
                             UserName = request.UserName,
                             Password = request.Password,
-                            // FkRol = request.FkRol,
+                            FkRol = request.FkRol,
                         };
                         _context.Usuarios.Add(res);
                         _context.SaveChanges();
@@ -50,7 +50,7 @@ namespace ProyectoFinal_23AM.Services
                     update.Nombre = request.Nombre;
                     update.UserName = request.UserName;
                     update.Password = request.Password;
-                    // FkRol = request.FkRol,
+                    update.FkRol = request.FkRol;
 
                     _context.Usuarios.Update(update);
                     _context.SaveChanges();
@@ -95,7 +95,7 @@ namespace ProyectoFinal_23AM.Services
                 {
                     List<Usuario> usuarios = new List<Usuario>();
 
-                    usuarios = _context.Usuarios.ToList();
+                    usuarios = _context.Usuarios.Include(x => x.Roles).ToList();
 
                     return usuarios;
                 }

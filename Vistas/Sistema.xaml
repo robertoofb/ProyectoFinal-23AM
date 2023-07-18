@@ -22,6 +22,7 @@
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" />
                 <DataGridTextColumn Header="Usuario" Binding="{Binding UserName}" />
                 <DataGridTextColumn Header="Password" Binding="{Binding Password}" />
+                <DataGridTextColumn Header="Rol" Binding="{Binding Roles.Nombre}" />
 
                 <DataGridTemplateColumn Header="Editar">
                     <DataGridTemplateColumn.CellTemplate>
@@ -33,7 +34,7 @@
                 <DataGridTemplateColumn Header="Delete">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Delete"/>
+                            <Button Content="Delete" Click="DeleteItem"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -43,6 +44,5 @@
         <ComboBox x:Name="SelectRol" HorizontalAlignment="Left" Height="22" Margin="50,314,0,0" VerticalAlignment="Top" Width="102"/>
         <Label Content="Rol" HorizontalAlignment="Left" Height="23" Margin="50,286,0,0" VerticalAlignment="Top" Width="102"/>
         <TextBox x:Name="txtPkUser" HorizontalAlignment="Left" Height="21" Margin="50,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" IsEnabled="False"/>
-        <Button x:Name="BtnDelete" Content="Eliminar" HorizontalAlignment="Left" Height="23" Margin="67,381,0,0" VerticalAlignment="Top" Width="68" Foreground="Black" Background="#FFE65656" Click="BtnDelete_Click"/>
     </Grid>
 </Window>

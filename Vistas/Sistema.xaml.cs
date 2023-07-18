@@ -38,7 +38,8 @@ namespace ProyectoFinal_23AM.Vistas
                 {
                     Nombre = txtNombre.Text,
                     UserName = txtUserName.Text,
-                    Password = txtPassword.Text
+                    Password = txtPassword.Text,
+                    FkRol = int.Parse(SelectRol.SelectedValue.ToString())
                 };
 
                 services.AddUser(usuario);
@@ -77,6 +78,25 @@ namespace ProyectoFinal_23AM.Vistas
             txtUserName.Text = usuario.UserName.ToString();
             txtPassword.Text = usuario.Password.ToString();
         }
+        public void DeleteItem(object sender, RoutedEventArgs e)
+        {
+            if (txtPkUser.Text!= "")
+            {
+                int userId = Convert.ToInt32(txtPkUser.Text);
+                Usuario usuario = new Usuario();
+                usuario.PkUsuario = userId;
+                services.DeleteUser(userId);
+                MessageBox.Show("Registro Eliminado");
+                txtNombre.Clear();
+                txtUserName.Clear();
+                txtPassword.Clear();
+                GetUserTable();
+            }
+            else
+            {
+                MessageBox.Show("Primero selecciona un registro");
+            }
+        }
         public void GetUserTable()
         {
             UserTable.ItemsSource = services.GetUsuarios();
@@ -88,17 +108,5 @@ namespace ProyectoFinal_23AM.Vistas
             SelectRol.SelectedValuePath = "PkRol";
         }
 
-        private void BtnDelete_Click(object sender, RoutedEventArgs e)
-        {
-            int userId = Convert.ToInt32(txtPkUser.Text);
-            Usuario usuario = new Usuario();
-            usuario.PkUsuario = userId;
-            services.DeleteUser(userId);
-            MessageBox.Show("Registro Eliminado");
-            txtNombre.Clear();
-            txtUserName.Clear();
-            txtPassword.Clear();
-            GetUserTable();
-        }
     }
 }
