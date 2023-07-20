@@ -1,17 +1,24 @@
-﻿<Window x:Class="ProyectoFinal_23AM.MainWindow"
+﻿<Window x:Name="window" x:Class="ProyectoFinal_23AM.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal_23AM"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Label FontSize="30" Content="Login" HorizontalAlignment="Left" Height="80" Margin="129,55,0,0" VerticalAlignment="Top" Width="508" HorizontalContentAlignment="Center"/>
-        <Label FontSize="15" Content="Usuario" HorizontalAlignment="Left" Height="26" Margin="323,135,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center"/>
-        <TextBox x:Name="txtUserName" FontSize="15" HorizontalAlignment="Left" Margin="323,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27"/>
-        <Label FontSize="15" Content="Password" HorizontalAlignment="Left" Height="28" Margin="323,193,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center"/>
-        <Button x:Name="btnLogin" Content="Iniciar" HorizontalAlignment="Left" Height="30" Margin="351,269,0,0" VerticalAlignment="Top" Width="64" Background="#FF5CC754" Click="btnLogin_Click"/>
-        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Height="27" Margin="323,226,0,0" VerticalAlignment="Top" Width="120" Visibility="Visible"/>
+        Title="MainWindow" Height="650" Width="500"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF7AA5D2">
+
+        <Label FontSize="24" Content="Usuario" HorizontalAlignment="Center" Height="52" Margin="0,276,0,0" VerticalAlignment="Top" Width="234" HorizontalContentAlignment="Center" Foreground="White"/>
+        <TextBox x:Name="txtUserName" FontSize="24" HorizontalAlignment="Center" Margin="0,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234" Height="52"/>
+        <Label FontSize="24" Content="Password" HorizontalAlignment="Center" Height="54" Margin="0,390,0,0" VerticalAlignment="Top" Width="234" HorizontalContentAlignment="Center" Foreground="White"/>
+        <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Center" Height="60" Margin="0,554,0,0" VerticalAlignment="Top" Width="124" Background="#FF7AA5D2" Click="btnLogin_Click" Foreground="White" FontSize="24" BorderBrush="White" BorderThickness="2,2,2,2"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Center" Height="54" Margin="0,444,0,0" VerticalAlignment="Top" Width="234" Visibility="Visible" FontSize="24"/>
+        <Image Margin="104,76,104,412" Source="/MainWindowImages/logo.PNG" Stretch="Fill"/>
+        <Image Margin="70,448,384,156" Source="/MainWindowImages/candado.png" Stretch="Fill" RenderTransformOrigin="0.696,0.457"/>
+        <Button x:Name="BtnDelete" Content="x" HorizontalAlignment="Left" Height="31" Margin="456,10,0,0" VerticalAlignment="Top" Width="34" Background="#FFBF4242" FontSize="16" Click="BtnDelete_Click" FontWeight="Bold"/>
+
     </Grid>
 </Window>

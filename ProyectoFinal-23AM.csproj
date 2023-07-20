@@ -9,12 +9,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="borrar.png" />
+    <None Remove="fondo.jpg" />
+    <None Remove="MainWindowImages\candado.png" />
+    <None Remove="MainWindowImages\logo.PNG" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="MySql.EntityFrameworkCore" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="borrar.png" />
+    <Resource Include="fondo.jpg" />
+    <Resource Include="MainWindowImages\candado.png" />
+    <Resource Include="MainWindowImages\logo.PNG" />
   </ItemGroup>
 
 </Project>

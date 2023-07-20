@@ -35,7 +35,7 @@ namespace ProyectoFinal_23AM
             var response = services.Login(user, Password);
             if(response != null)
             {
-                if(response.Roles.Nombre == "sa")
+                if(response.Roles.Nombre == "Administrador")
                 {
                     Sistema sistema = new Sistema();
                     sistema.Show();
@@ -52,6 +52,18 @@ namespace ProyectoFinal_23AM
             {
                 MessageBox.Show("No se encontró el usuario");
             }
+        }
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            if(e.LeftButton== MouseButtonState.Pressed)
+            {
+                DragMove();
+            }
+        }
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

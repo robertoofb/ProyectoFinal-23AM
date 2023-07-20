@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal_23AM.Vistas"
         mc:Ignorable="d"
-        Title="Sistema" Height="450" Width="800">
+        Title="Sistema" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
     <Grid>
         <Label FontSize="50" Content="Bienvenido al sistema" HorizontalAlignment="Left" Height="68" Margin="219,10,0,0" VerticalAlignment="Top" Width="501"/>
         <Label Content="Nombre" HorizontalAlignment="Left" Height="34" Margin="50,110,0,0" VerticalAlignment="Top" Width="176"/>

@@ -13,7 +13,7 @@ namespace ProyectoFinal_23AM.Context
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             //Cadena de conexion
-            options.UseMySQL("server=localhost; database=proyectofinal-fierro; user=root; password=");
+            options.UseMySQL("server=localhost; database=EduKids; user=root; password=");
             //Si hay error con la mmigracion prueba esta
             //optionsBuilder.UseMySQL("Server=localhost;port=3306;User ID=root; Database=Empleados23BM");
         }
