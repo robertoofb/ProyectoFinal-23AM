@@ -33,9 +33,16 @@ namespace ProyectoFinal_23AM
             string Password = txtPassword.Password;
 
             var response = services.Login(user, Password);
+
             if(response != null)
             {
-                if(response.Roles.Nombre == "Administrador")
+                if(response.Roles.Nombre == "SA")
+                {
+                    SuperAdmin sistema = new SuperAdmin();
+                    sistema.Show();
+                    Close();
+                }
+                else if(response.Roles.Nombre == "Administrador")
                 {
                     Sistema sistema = new Sistema();
                     sistema.Show();
@@ -43,9 +50,9 @@ namespace ProyectoFinal_23AM
                 }
                 else
                 {
-                    SistemaCopia sistema = new SistemaCopia();
+                    /*SistemaCopia sistema = new SistemaCopia();
                     sistema.Show();
-                    Close();
+                    Close();*/
                 }
             }
             else

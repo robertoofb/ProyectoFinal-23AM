@@ -13,7 +13,7 @@
 
         <Label FontSize="24" Content="Usuario" HorizontalAlignment="Center" Height="52" Margin="0,276,0,0" VerticalAlignment="Top" Width="234" HorizontalContentAlignment="Center" Foreground="White"/>
         <TextBox x:Name="txtUserName" FontSize="24" HorizontalAlignment="Center" Margin="0,328,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234" Height="52"/>
-        <Label FontSize="24" Content="Password" HorizontalAlignment="Center" Height="54" Margin="0,390,0,0" VerticalAlignment="Top" Width="234" HorizontalContentAlignment="Center" Foreground="White"/>
+        <Label FontSize="24" Content="Contraseña" HorizontalAlignment="Center" Height="54" Margin="0,390,0,0" VerticalAlignment="Top" Width="234" HorizontalContentAlignment="Center" Foreground="White"/>
         <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Center" Height="60" Margin="0,554,0,0" VerticalAlignment="Top" Width="124" Background="#FF7AA5D2" Click="btnLogin_Click" Foreground="White" FontSize="24" BorderBrush="White" BorderThickness="2,2,2,2"/>
         <PasswordBox x:Name="txtPassword" HorizontalAlignment="Center" Height="54" Margin="0,444,0,0" VerticalAlignment="Top" Width="234" Visibility="Visible" FontSize="24"/>
         <Image Margin="104,76,104,412" Source="/MainWindowImages/logo.PNG" Stretch="Fill"/>

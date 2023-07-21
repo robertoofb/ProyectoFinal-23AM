@@ -7,22 +7,22 @@
         mc:Ignorable="d"
         Title="Sistema" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
-    <Grid>
-        <Label FontSize="50" Content="Bienvenido al sistema" HorizontalAlignment="Left" Height="68" Margin="219,10,0,0" VerticalAlignment="Top" Width="501"/>
-        <Label Content="Nombre" HorizontalAlignment="Left" Height="34" Margin="50,110,0,0" VerticalAlignment="Top" Width="176"/>
+    <Grid Background="#FF7AA5D2">
+        <Label FontSize="35" Content="Bienvenido al sistema" HorizontalAlignment="Left" Height="62" Margin="291,24,0,0" VerticalAlignment="Top" Width="357" Foreground="White" Background="#FF6BA4E0" BorderThickness="3,3,3,3" BorderBrush="White"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Height="34" Margin="50,110,0,0" VerticalAlignment="Top" Width="176" Foreground="White"/>
         <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="19" Margin="50,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
-        <Label Content="Usuario" HorizontalAlignment="Left" Height="27" Margin="50,165,0,0" VerticalAlignment="Top" Width="102"/>
+        <Label Content="Usuario" HorizontalAlignment="Left" Height="27" Margin="50,165,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
         <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="25" Margin="50,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
-        <Label Content="Password" HorizontalAlignment="Left" Height="26" Margin="50,231,0,0" VerticalAlignment="Top" Width="102"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Height="26" Margin="50,231,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
         <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="24" Margin="50,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
-        <Button x:Name="BtnAdd" Content="Guardar" HorizontalAlignment="Left" Height="23" Margin="67,353,0,0" VerticalAlignment="Top" Width="68" Background="#FF96E486" Click="BtnAdd_Click"/>
+        <Button x:Name="BtnAdd" Content="Guardar" HorizontalAlignment="Left" Height="27" Margin="66,353,0,0" VerticalAlignment="Top" Width="70" Background="#FF6BA4E0" Click="BtnAdd_Click" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White"/>
 
         <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="183,110,44,44">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding PkUsuario}" />
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" />
                 <DataGridTextColumn Header="Usuario" Binding="{Binding UserName}" />
-                <DataGridTextColumn Header="Password" Binding="{Binding Password}" />
+                <DataGridTextColumn Header="Contraseña" Binding="{Binding Password}" />
                 <DataGridTextColumn Header="Rol" Binding="{Binding Roles.Nombre}" />
 
                 <DataGridTemplateColumn Header="Editar">
@@ -43,7 +43,12 @@
 
         </DataGrid>
         <ComboBox x:Name="SelectRol" HorizontalAlignment="Left" Height="22" Margin="50,314,0,0" VerticalAlignment="Top" Width="102"/>
-        <Label Content="Rol" HorizontalAlignment="Left" Height="23" Margin="50,286,0,0" VerticalAlignment="Top" Width="102"/>
+        <Label Content="Rol" HorizontalAlignment="Left" Height="23" Margin="50,286,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
         <TextBox x:Name="txtPkUser" HorizontalAlignment="Left" Height="21" Margin="50,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" IsEnabled="False"/>
+        <Button x:Name="BtnVolver" Content="" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" VerticalAlignment="Top" Width="38" BorderThickness="0,0,0,0" Click="BtnVolver_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/MainWindowImages/volver-flecha.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

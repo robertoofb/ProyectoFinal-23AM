@@ -13,6 +13,7 @@
     <None Remove="fondo.jpg" />
     <None Remove="MainWindowImages\candado.png" />
     <None Remove="MainWindowImages\logo.PNG" />
+    <None Remove="MainWindowImages\volver-flecha.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +30,7 @@
     <Resource Include="fondo.jpg" />
     <Resource Include="MainWindowImages\candado.png" />
     <Resource Include="MainWindowImages\logo.PNG" />
+    <Resource Include="MainWindowImages\volver-flecha.png" />
   </ItemGroup>
 
 </Project>

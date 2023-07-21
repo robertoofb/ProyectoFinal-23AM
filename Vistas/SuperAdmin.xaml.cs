@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -17,35 +18,34 @@ using System.Windows.Shapes;
 namespace ProyectoFinal_23AM.Vistas
 {
     /// <summary>
-    /// Lógica de interacción para Sistema.xaml
+    /// Lógica de interacción para SuperAdmin.xaml
     /// </summary>
-    public partial class Sistema : Window
+    public partial class SuperAdmin : Window
     {
-        public Sistema()
+        public SuperAdmin()
         {
             InitializeComponent();
             GetUserTable();
-            GetRoles();
         }
 
         UsuarioServices services = new UsuarioServices();
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            if(txtPkUser.Text == "")
+            if (txtPkUser.Text == "")
             {
                 Usuario usuario = new Usuario()
                 {
                     Nombre = txtNombre.Text,
-                    UserName = txtUserName.Text,
+                    UserName = txtUsuario.Text,
                     Password = txtPassword.Text,
-                    FkRol = int.Parse(SelectRol.SelectedValue.ToString())
+                    FkRol = 2
                 };
 
                 services.AddUser(usuario);
-                MessageBox.Show("Usuario agregado");
+                MessageBox.Show("Administrador agregado");
                 txtNombre.Clear();
-                txtUserName.Clear();
+                txtUsuario.Clear();
                 txtPassword.Clear();
                 GetUserTable();
             }
@@ -56,15 +56,15 @@ namespace ProyectoFinal_23AM.Vistas
                 Usuario usuario = new Usuario()
                 {
                     PkUsuario = userId,
-                    Nombre= txtNombre.Text,
-                    UserName = txtUserName.Text,
+                    Nombre = txtNombre.Text,
+                    UserName = txtUsuario.Text,
                     Password = txtPassword.Text,
-                    FkRol = int.Parse(SelectRol.SelectedValue.ToString())
+                    FkRol = 2
                 };
                 services.UpdateUser(usuario);
-                MessageBox.Show("Usuario modificado");
+                MessageBox.Show("Administrador modificado");
                 txtNombre.Clear();
-                txtUserName.Clear();
+                txtUsuario.Clear();
                 txtPassword.Clear();
                 GetUserTable();
             }
@@ -76,20 +76,20 @@ namespace ProyectoFinal_23AM.Vistas
             usuario = (sender as FrameworkElement).DataContext as Usuario;
             txtPkUser.Text = usuario.PkUsuario.ToString();
             txtNombre.Text = usuario.Nombre.ToString();
-            txtUserName.Text = usuario.UserName.ToString();
+            txtUsuario.Text = usuario.UserName.ToString();
             txtPassword.Text = usuario.Password.ToString();
         }
         public void DeleteItem(object sender, RoutedEventArgs e)
         {
-            if (txtPkUser.Text!= "")
+            if (txtPkUser.Text != "")
             {
                 int userId = Convert.ToInt32(txtPkUser.Text);
                 Usuario usuario = new Usuario();
                 usuario.PkUsuario = userId;
                 services.DeleteUser(userId);
-                MessageBox.Show("Registro Eliminado");
+                MessageBox.Show("Administrador Eliminado");
                 txtNombre.Clear();
-                txtUserName.Clear();
+                txtUsuario.Clear();
                 txtPassword.Clear();
                 GetUserTable();
             }
@@ -102,16 +102,10 @@ namespace ProyectoFinal_23AM.Vistas
         {
             UserTable.ItemsSource = services.GetUsuarios();
         }
-        public void GetRoles()
-        {
-            SelectRol.ItemsSource = services.GetRoles();
-            SelectRol.DisplayMemberPath = "Nombre";
-            SelectRol.SelectedValuePath = "PkRol";
-        }
 
         private void BtnVolver_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow main= new MainWindow();
+            MainWindow main = new MainWindow();
             main.Show();
             Close();
         }
