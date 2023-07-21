@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+//#FF296EB7
 
 namespace ProyectoFinal_23AM.Services
 {
@@ -114,7 +115,8 @@ namespace ProyectoFinal_23AM.Services
                     List<Rol> roles = new List<Rol>();
 
                     roles = _context.Roles.ToList();
-
+                    roles.RemoveAt(1);
+                    roles.RemoveAt(0);
                     return roles;
                 }
             }

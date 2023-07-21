@@ -24,12 +24,12 @@
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" />
                 <DataGridTextColumn Header="Usuario" Binding="{Binding UserName}" />
                 <DataGridTextColumn Header="Contraseña" Binding="{Binding Password}" />
-                <DataGridTextColumn Header="Rol" Binding="{Binding Roles.Nombre}" />
+                <DataGridTextColumn Header="Puesto" Binding="{Binding Roles.Nombre}" />
 
                 <DataGridTemplateColumn Header="Editar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Select" Click="EditItem" />
+                            <Button Background="Aqua" Content="Select" Click="EditItem" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>

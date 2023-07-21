@@ -23,12 +23,12 @@
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" />
                 <DataGridTextColumn Header="Usuario" Binding="{Binding UserName}" />
                 <DataGridTextColumn Header="Contraseña" Binding="{Binding Password}" />
-                <DataGridTextColumn Header="Rol" Binding="{Binding Roles.Nombre}" />
+                <DataGridTextColumn Header="Puesto" Binding="{Binding Roles.Nombre}" />
 
                 <DataGridTemplateColumn Header="Editar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Select" Click="EditItem" />
+                            <Button Background="Aqua" Content="Select" Click="EditItem" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -43,11 +43,16 @@
 
         </DataGrid>
         <ComboBox x:Name="SelectRol" HorizontalAlignment="Left" Height="22" Margin="50,314,0,0" VerticalAlignment="Top" Width="102"/>
-        <Label Content="Rol" HorizontalAlignment="Left" Height="23" Margin="50,286,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
+        <Label Content="Puesto" HorizontalAlignment="Left" Height="23" Margin="50,286,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
         <TextBox x:Name="txtPkUser" HorizontalAlignment="Left" Height="21" Margin="50,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" IsEnabled="False"/>
         <Button x:Name="BtnVolver" Content="" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" VerticalAlignment="Top" Width="38" BorderThickness="0,0,0,0" Click="BtnVolver_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/MainWindowImages/volver-flecha.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnAlumnos" Content="" HorizontalAlignment="Left" Height="28" Margin="749,10,0,0" VerticalAlignment="Top" Width="32" BorderThickness="0,0,0,0" Click="BtnAlumnos_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/MainWindowImages/graduacion.png"/>
             </Button.Background>
         </Button>
     </Grid>

@@ -115,5 +115,12 @@ namespace ProyectoFinal_23AM.Vistas
             main.Show();
             Close();
         }
+
+        private void BtnAlumnos_Click(object sender, RoutedEventArgs e)
+        {
+            AdminAlumnado alumno = new AdminAlumnado();
+            alumno.Show();
+            Close();
+        }
     }
 }
