@@ -19,6 +19,11 @@ namespace ProyectoFinal_23AM.Context
         }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Rol> Roles { get; set; }
+        public DbSet<Alumno> alumnos { get; set; }
+        public DbSet<Grados> grados { get; set; }
+        public DbSet<Materias> materias { get; set; }
+        public DbSet<Calificaciones> calificaciones { get; set; }
+
 
     }
 }  

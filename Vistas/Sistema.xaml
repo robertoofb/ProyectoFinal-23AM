@@ -5,19 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal_23AM.Vistas"
         mc:Ignorable="d"
-        Title="Sistema" Height="450" Width="800"
+        Title="Sistema" Height="460" Width="800"
         WindowStartupLocation="CenterScreen">
     <Grid Background="#FF7AA5D2">
-        <Label FontSize="35" Content="Bienvenido al sistema" HorizontalAlignment="Left" Height="62" Margin="291,24,0,0" VerticalAlignment="Top" Width="357" Foreground="White" Background="#FF6BA4E0" BorderThickness="3,3,3,3" BorderBrush="White"/>
-        <Label Content="Nombre" HorizontalAlignment="Left" Height="34" Margin="50,110,0,0" VerticalAlignment="Top" Width="176" Foreground="White"/>
-        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="19" Margin="50,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
-        <Label Content="Usuario" HorizontalAlignment="Left" Height="27" Margin="50,165,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
-        <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="25" Margin="50,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
-        <Label Content="Contraseña" HorizontalAlignment="Left" Height="26" Margin="50,231,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
-        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="24" Margin="50,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
-        <Button x:Name="BtnAdd" Content="Guardar" HorizontalAlignment="Left" Height="27" Margin="66,353,0,0" VerticalAlignment="Top" Width="70" Background="#FF6BA4E0" Click="BtnAdd_Click" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White"/>
+        <Label FontSize="35" Content="Bienvenido a la Lista de Usuarios" HorizontalAlignment="Center" Height="62" Margin="0,10,0,0" VerticalAlignment="Top" Width="520" Foreground="White" Background="#FF6BA4E0" BorderThickness="3,3,3,3" BorderBrush="White"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Height="34" Margin="62,139,0,0" VerticalAlignment="Top" Width="176" Foreground="White"/>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="62,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
+        <Label Content="Usuario" HorizontalAlignment="Left" Height="27" Margin="62,194,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
+        <TextBox x:Name="txtUserName" HorizontalAlignment="Left" Height="24" Margin="62,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
+        <Label Content="Contraseña" HorizontalAlignment="Left" Height="26" Margin="62,250,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="24" Margin="62,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
+        <Button x:Name="BtnAdd" Content="Guardar" HorizontalAlignment="Left" Height="27" Margin="115,377,0,0" VerticalAlignment="Top" Width="70" Background="#FF6BA4E0" Click="BtnAdd_Click" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White"/>
 
-        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="183,110,44,44">
+        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="203,109,37,25">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding PkUsuario}" />
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" />
@@ -42,9 +42,9 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <ComboBox x:Name="SelectRol" HorizontalAlignment="Left" Height="22" Margin="50,314,0,0" VerticalAlignment="Top" Width="102"/>
-        <Label Content="Puesto" HorizontalAlignment="Left" Height="23" Margin="50,286,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
-        <TextBox x:Name="txtPkUser" HorizontalAlignment="Left" Height="21" Margin="50,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" IsEnabled="False"/>
+        <ComboBox x:Name="SelectRol" HorizontalAlignment="Left" Height="22" Margin="62,333,0,0" VerticalAlignment="Top" Width="102"/>
+        <Label Content="Puesto" HorizontalAlignment="Left" Height="23" Margin="62,305,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
+        <TextBox x:Name="txtPkUser" HorizontalAlignment="Left" Height="21" Margin="62,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102" IsEnabled="False"/>
         <Button x:Name="BtnVolver" Content="" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" VerticalAlignment="Top" Width="38" BorderThickness="0,0,0,0" Click="BtnVolver_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/MainWindowImages/volver-flecha.png"/>
@@ -55,5 +55,6 @@
                 <ImageBrush ImageSource="/MainWindowImages/graduacion.png"/>
             </Button.Background>
         </Button>
+        <Button x:Name="BtnClear" Content="Limpiar" HorizontalAlignment="Left" Height="27" Margin="40,377,0,0" VerticalAlignment="Top" Width="70" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White" Click="BtnClear_Click"/>
     </Grid>
 </Window>

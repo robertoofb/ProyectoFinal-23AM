@@ -8,11 +8,39 @@
         Title="AdminAlumnado" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
     <Grid Background="#FF7AA5D2">
-        <Label FontSize="35" Content="Lista del Alumnado" HorizontalAlignment="Center" Height="62" Margin="0,23,0,0" VerticalAlignment="Top" Width="314" Foreground="White" Background="#FF6BA4E0" BorderThickness="3,3,3,3" BorderBrush="White"/>
+        <Label FontSize="35" Content="Lista del Alumnado" HorizontalAlignment="Center" Height="62" Margin="0,22,0,0" VerticalAlignment="Top" Width="312" Foreground="White" Background="#FF6BA4E0" BorderThickness="3,3,3,3" BorderBrush="White"/>
         <Button x:Name="BtnVolver" Content="" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" VerticalAlignment="Top" Width="38" BorderThickness="0,0,0,0" Click="BtnVolver_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/MainWindowImages/volver-flecha.png"/>
             </Button.Background>
         </Button>
+        <Label Content="Nombre" HorizontalAlignment="Left" Height="34" Margin="106,228,0,0" VerticalAlignment="Top" Width="176" Foreground="White"/>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="19" Margin="106,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
+        <Button x:Name="BtnAdd" Content="Guardar" HorizontalAlignment="Left" Height="27" Margin="157,297,0,0" VerticalAlignment="Top" Width="70" Background="#FF6BA4E0" Click="BtnAdd_Click" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White"/>
+
+        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="313,166,129,46">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Matrícula" Binding="{Binding PkMatricula}" />
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" />
+
+                <DataGridTemplateColumn Header="Editar">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Background="Aqua" Content="Select" Click="EditItem" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Delete" Click="DeleteItem"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <TextBox x:Name="txtPkMatricula" HorizontalAlignment="Left" Height="21" Margin="106,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="102" IsEnabled="False"/>
+        <Button x:Name="BtnClear" Content="Limpiar" HorizontalAlignment="Left" Height="27" Margin="82,297,0,0" VerticalAlignment="Top" Width="70" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White" Click="BtnClear_Click"/>
     </Grid>
 </Window>

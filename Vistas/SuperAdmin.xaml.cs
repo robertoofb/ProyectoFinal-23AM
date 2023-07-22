@@ -95,7 +95,7 @@ namespace ProyectoFinal_23AM.Vistas
             }
             else
             {
-                MessageBox.Show("Primero selecciona un registro");
+                MessageBox.Show("Primero selecciona a un Administrador");
             }
         }
         public void GetUserTable()
@@ -108,6 +108,14 @@ namespace ProyectoFinal_23AM.Vistas
             MainWindow main = new MainWindow();
             main.Show();
             Close();
+        }
+
+        private void BtnClear_Click(object sender, RoutedEventArgs e)
+        {
+            txtNombre.Clear();
+            txtUsuario.Clear();
+            txtPassword.Clear();
+            txtPkUser.Clear();
         }
     }
 }

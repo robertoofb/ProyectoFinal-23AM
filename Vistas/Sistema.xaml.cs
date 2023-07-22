@@ -122,5 +122,13 @@ namespace ProyectoFinal_23AM.Vistas
             alumno.Show();
             Close();
         }
+
+        private void BtnClear_Click(object sender, RoutedEventArgs e)
+        {
+            txtPkUser.Clear();
+            txtUserName.Clear();
+            txtPassword.Clear();
+            txtNombre.Clear();
+        }
     }
 }
