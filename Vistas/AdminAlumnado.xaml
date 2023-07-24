@@ -14,14 +14,14 @@
                 <ImageBrush ImageSource="/MainWindowImages/volver-flecha.png"/>
             </Button.Background>
         </Button>
-        <Label Content="Nombre" HorizontalAlignment="Left" Height="34" Margin="106,228,0,0" VerticalAlignment="Top" Width="176" Foreground="White"/>
-        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="19" Margin="106,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
-        <Button x:Name="BtnAdd" Content="Guardar" HorizontalAlignment="Left" Height="27" Margin="157,297,0,0" VerticalAlignment="Top" Width="70" Background="#FF6BA4E0" Click="BtnAdd_Click" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White"/>
+        <Label Content="Nombre/s" HorizontalAlignment="Left" Height="25" Margin="29,182,0,0" VerticalAlignment="Top" Width="176" Foreground="White"/>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="19" Margin="29,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"/>
+        <Button x:Name="BtnAdd" Content="Guardar" HorizontalAlignment="Left" Height="27" Margin="107,340,0,0" VerticalAlignment="Top" Width="70" Background="#FF6BA4E0" Click="BtnAdd_Click" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White"/>
 
-        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="313,166,129,46">
+        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="192,182,28,24">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Matrícula" Binding="{Binding PkMatricula}" />
-                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" />
+                <DataGridTextColumn Header="Matrícula" Binding="{Binding PkMatricula}"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>
 
                 <DataGridTemplateColumn Header="Editar">
                     <DataGridTemplateColumn.CellTemplate>
@@ -40,7 +40,17 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <TextBox x:Name="txtPkMatricula" HorizontalAlignment="Left" Height="21" Margin="106,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="102" IsEnabled="False"/>
-        <Button x:Name="BtnClear" Content="Limpiar" HorizontalAlignment="Left" Height="27" Margin="82,297,0,0" VerticalAlignment="Top" Width="70" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White" Click="BtnClear_Click"/>
+        <TextBox x:Name="txtPkMatricula" HorizontalAlignment="Left" Height="21" Margin="261,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="113" IsEnabled="False"/>
+        <Button x:Name="BtnClear" Content="Limpiar" HorizontalAlignment="Left" Height="27" Margin="29,340,0,0" VerticalAlignment="Top" Width="70" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White" Click="BtnClear_Click"/>
+        <Label Content="Apellidos" HorizontalAlignment="Left" Height="26" Margin="29,254,0,0" VerticalAlignment="Top" Width="176" Foreground="White"/>
+        <TextBox x:Name="txtApellido" HorizontalAlignment="Left" Height="19" Margin="29,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"/>
+        <Label Content="Matrícula" HorizontalAlignment="Left" Height="25" Margin="192,123,0,0" VerticalAlignment="Top" Width="64" Foreground="White"/>
+        <Label x:Name="LabelNombre" Content="Nombre Completo Actual" HorizontalAlignment="Left" Height="30" Margin="391,123,0,0" VerticalAlignment="Top" Width="149" Foreground="White" Visibility="Hidden"/>
+        <TextBox x:Name="txtNombreCompleto" HorizontalAlignment="Left" Height="19" Margin="545,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Visibility="Hidden"/>
+        <Button Content="" HorizontalAlignment="Left" Height="34" Margin="729,10,0,0" VerticalAlignment="Top" Width="43" BorderThickness="0,0,0,0" RenderTransformOrigin="0.5,0.5" Click="Button_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/MainWindowImages/calif.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Window>

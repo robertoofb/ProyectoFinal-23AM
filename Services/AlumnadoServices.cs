@@ -96,5 +96,23 @@ namespace ProyectoFinal_23AM.Services
                 throw new Exception("Sucedió un error " + ex.Message);
             }
         }
+        public List<Calificaciones> GetCalificaciones()
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    List<Calificaciones> alumnos = new List<Calificaciones>();
+
+                    alumnos = _context.calificaciones.Include(x => x.Materias).Include(x => x.Grados).Include(x => x.Alumnos).ToList();
+
+                    return alumnos;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Sucedió un error " + ex.Message);
+            }
+        }
     }
 }

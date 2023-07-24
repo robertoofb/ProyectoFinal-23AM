@@ -11,6 +11,7 @@
   <ItemGroup>
     <None Remove="borrar.png" />
     <None Remove="fondo.jpg" />
+    <None Remove="MainWindowImages\calif.png" />
     <None Remove="MainWindowImages\candado.png" />
     <None Remove="MainWindowImages\graduacion.png" />
     <None Remove="MainWindowImages\logo.PNG" />
@@ -29,6 +30,7 @@
   <ItemGroup>
     <Resource Include="borrar.png" />
     <Resource Include="fondo.jpg" />
+    <Resource Include="MainWindowImages\calif.png" />
     <Resource Include="MainWindowImages\candado.png" />
     <Resource Include="MainWindowImages\graduacion.png" />
     <Resource Include="MainWindowImages\logo.PNG" />

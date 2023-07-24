@@ -41,12 +41,13 @@ namespace ProyectoFinal_23AM.Vistas
             {
                 Alumno alumno = new Alumno()
                 {
-                    Nombre = txtNombre.Text,
+                    Nombre = txtNombre.Text + " " + txtApellido.Text
                 };
 
                 services.AddAlumno(alumno);
                 MessageBox.Show("Alumno agregado");
                 txtNombre.Clear();
+                txtApellido.Clear();
                 GetAlumnosTable();
             }
             else
@@ -55,21 +56,27 @@ namespace ProyectoFinal_23AM.Vistas
                 Alumno alumno = new Alumno()
                 {
                     PkMatricula = userId,
-                    Nombre = txtNombre.Text
+                    Nombre = txtNombre.Text + " " + txtApellido.Text
                 };
                 services.UpdateAlumno(alumno);
                 MessageBox.Show("Alumno modificado");
                 txtNombre.Clear();
+                txtApellido.Clear();
+                LabelNombre.Visibility = Visibility.Hidden;
+                txtNombreCompleto.Visibility = Visibility.Hidden;
+                txtPkMatricula.Clear();
                 GetAlumnosTable();
             }
         }
         public void EditItem(object sender, RoutedEventArgs e)
         {
             Alumno alumno = new Alumno();
+            LabelNombre.Visibility = Visibility.Visible;
+            txtNombreCompleto.Visibility = Visibility.Visible;
 
             alumno = (sender as FrameworkElement).DataContext as Alumno;
             txtPkMatricula.Text = alumno.PkMatricula.ToString();
-            txtNombre.Text = alumno.Nombre.ToString();
+            txtNombreCompleto.Text  = alumno.Nombre.ToString();
         }
         public void DeleteItem(object sender, RoutedEventArgs e)
         {
@@ -81,6 +88,10 @@ namespace ProyectoFinal_23AM.Vistas
                 services.DeleteAlumno(userId);
                 MessageBox.Show("Alumno Eliminado");
                 txtNombre.Clear();
+                txtApellido.Clear();
+                LabelNombre.Visibility = Visibility.Hidden;
+                txtNombreCompleto.Visibility = Visibility.Hidden;
+                txtPkMatricula.Clear();
                 GetAlumnosTable();
             }
             else
@@ -101,8 +112,18 @@ namespace ProyectoFinal_23AM.Vistas
 
         private void BtnClear_Click(object sender, RoutedEventArgs e)
         {
+            LabelNombre.Visibility = Visibility.Hidden;
+            txtNombreCompleto.Visibility = Visibility.Hidden;
             txtPkMatricula.Clear();
             txtNombre.Clear();
+            txtApellido.Clear();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AdminCalif calif = new AdminCalif();
+            calif.Show();
+            Close();
         }
     }
 }

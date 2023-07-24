@@ -88,6 +88,7 @@ namespace ProyectoFinal_23AM.Vistas
                 usuario.PkUsuario = userId;
                 services.DeleteUser(userId);
                 MessageBox.Show("Administrador Eliminado");
+                txtPkUser.Clear();
                 txtNombre.Clear();
                 txtUsuario.Clear();
                 txtPassword.Clear();
