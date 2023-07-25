@@ -3,23 +3,10 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace ProyectoFinal_23AM.Migrations
 {
-    public partial class EduKids : Migration
+    public partial class Edukids : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
-                name: "alumnos",
-                columns: table => new
-                {
-                    PkMatricula = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Nombre = table.Column<string>(type: "text", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_alumnos", x => x.PkMatricula);
-                });
-
             migrationBuilder.CreateTable(
                 name: "grados",
                 columns: table => new
@@ -60,6 +47,48 @@ namespace ProyectoFinal_23AM.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "alumnos",
+                columns: table => new
+                {
+                    PkMatricula = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Nombre = table.Column<string>(type: "text", nullable: false),
+                    FkGrado = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_alumnos", x => x.PkMatricula);
+                    table.ForeignKey(
+                        name: "FK_alumnos_grados_FkGrado",
+                        column: x => x.FkGrado,
+                        principalTable: "grados",
+                        principalColumn: "PkGrado",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Usuarios",
+                columns: table => new
+                {
+                    PkUsuario = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Nombre = table.Column<string>(type: "text", nullable: false),
+                    UserName = table.Column<string>(type: "text", nullable: false),
+                    Password = table.Column<string>(type: "text", nullable: false),
+                    FkRol = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Usuarios", x => x.PkUsuario);
+                    table.ForeignKey(
+                        name: "FK_Usuarios_Roles_FkRol",
+                        column: x => x.FkRol,
+                        principalTable: "Roles",
+                        principalColumn: "PkRol",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "calificaciones",
                 columns: table => new
                 {
@@ -93,27 +122,10 @@ namespace ProyectoFinal_23AM.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Usuarios",
-                columns: table => new
-                {
-                    PkUsuario = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
-                    Nombre = table.Column<string>(type: "text", nullable: false),
-                    UserName = table.Column<string>(type: "text", nullable: false),
-                    Password = table.Column<string>(type: "text", nullable: false),
-                    FkRol = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Usuarios", x => x.PkUsuario);
-                    table.ForeignKey(
-                        name: "FK_Usuarios_Roles_FkRol",
-                        column: x => x.FkRol,
-                        principalTable: "Roles",
-                        principalColumn: "PkRol",
-                        onDelete: ReferentialAction.Restrict);
-                });
+            migrationBuilder.CreateIndex(
+                name: "IX_alumnos_FkGrado",
+                table: "alumnos",
+                column: "FkGrado");
 
             migrationBuilder.CreateIndex(
                 name: "IX_calificaciones_FkGrado",
@@ -148,13 +160,13 @@ namespace ProyectoFinal_23AM.Migrations
                 name: "alumnos");
 
             migrationBuilder.DropTable(
-                name: "grados");
-
-            migrationBuilder.DropTable(
                 name: "materias");
 
             migrationBuilder.DropTable(
                 name: "Roles");
+
+            migrationBuilder.DropTable(
+                name: "grados");
         }
     }
 }

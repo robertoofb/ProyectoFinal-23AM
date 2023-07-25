@@ -8,7 +8,7 @@
         Title="Sistema" Height="460" Width="800"
         WindowStartupLocation="CenterScreen">
     <Grid Background="#FF7AA5D2">
-        <Label FontSize="35" Content="Bienvenido a la Lista de Usuarios" HorizontalAlignment="Center" Height="62" Margin="0,10,0,0" VerticalAlignment="Top" Width="520" Foreground="White" Background="#FF6BA4E0" BorderThickness="3,3,3,3" BorderBrush="White"/>
+        <Label FontSize="35" Content="Bienvenido Administrador" HorizontalAlignment="Center" Height="62" Margin="0,22,0,0" VerticalAlignment="Top" Width="420" Foreground="White" Background="#FF6BA4E0" BorderThickness="3,3,3,3" BorderBrush="White"/>
         <Label Content="Nombre" HorizontalAlignment="Left" Height="34" Margin="62,139,0,0" VerticalAlignment="Top" Width="176" Foreground="White"/>
         <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="23" Margin="62,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102"/>
         <Label Content="Usuario" HorizontalAlignment="Left" Height="27" Margin="62,194,0,0" VerticalAlignment="Top" Width="102" Foreground="White"/>
@@ -50,11 +50,21 @@
                 <ImageBrush ImageSource="/MainWindowImages/volver-flecha.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnAlumnos" Content="" HorizontalAlignment="Left" Height="28" Margin="749,10,0,0" VerticalAlignment="Top" Width="32" BorderThickness="0,0,0,0" Click="BtnAlumnos_Click">
+        <Button x:Name="BtnAlumnos" Content="" HorizontalAlignment="Left" Height="28" Margin="740,10,0,0" VerticalAlignment="Top" Width="32" BorderThickness="0,0,0,0" Click="BtnAlumnos_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/MainWindowImages/graduacion.png"/>
             </Button.Background>
         </Button>
         <Button x:Name="BtnClear" Content="Limpiar" HorizontalAlignment="Left" Height="27" Margin="40,377,0,0" VerticalAlignment="Top" Width="70" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White" Click="BtnClear_Click"/>
+        <Label Content="Alumnos" HorizontalAlignment="Left" Height="24" Margin="729,37,0,0" VerticalAlignment="Top" Width="49" Foreground="White" Background="{x:Null}" RenderTransformOrigin="0.5,0.5" FontSize="10">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="4.764"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.917"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
     </Grid>
 </Window>

@@ -9,8 +9,8 @@ using ProyectoFinal_23AM.Context;
 namespace ProyectoFinal_23AM.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230722012858_EduKids")]
-    partial class EduKids
+    [Migration("20230725002702_Edukids")]
+    partial class Edukids
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,11 +25,17 @@ namespace ProyectoFinal_23AM.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int?>("FkGrado")
+                        .IsRequired()
+                        .HasColumnType("int");
+
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("PkMatricula");
+
+                    b.HasIndex("FkGrado");
 
                     b.ToTable("alumnos");
                 });
@@ -135,6 +141,17 @@ namespace ProyectoFinal_23AM.Migrations
                     b.HasIndex("FkRol");
 
                     b.ToTable("Usuarios");
+                });
+
+            modelBuilder.Entity("ProyectoFinal_23AM.Entities.Alumno", b =>
+                {
+                    b.HasOne("ProyectoFinal_23AM.Entities.Grados", "Grados")
+                        .WithMany()
+                        .HasForeignKey("FkGrado")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Grados");
                 });
 
             modelBuilder.Entity("ProyectoFinal_23AM.Entities.Calificaciones", b =>

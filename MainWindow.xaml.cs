@@ -48,11 +48,11 @@ namespace ProyectoFinal_23AM
                     sistema.Show();
                     Close();
                 }
-                else
+                else if(response.Roles.Nombre == "Docente")
                 {
-                    /*SistemaCopia sistema = new SistemaCopia();
+                    Docente sistema = new Docente();
                     sistema.Show();
-                    Close();*/
+                    Close();
                 }
             }
             else

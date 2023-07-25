@@ -25,6 +25,7 @@ namespace ProyectoFinal_23AM.Vistas
         {
             InitializeComponent();
             GetAlumnosTable();
+            GetGradoTable();
         }
 
         private void BtnVolver_Click(object sender, RoutedEventArgs e)
@@ -41,7 +42,8 @@ namespace ProyectoFinal_23AM.Vistas
             {
                 Alumno alumno = new Alumno()
                 {
-                    Nombre = txtNombre.Text + " " + txtApellido.Text
+                    Nombre = txtNombre.Text + " " + txtApellido.Text,
+                    FkGrado = int.Parse(SelectGrado.SelectedValue.ToString())
                 };
 
                 services.AddAlumno(alumno);
@@ -56,7 +58,8 @@ namespace ProyectoFinal_23AM.Vistas
                 Alumno alumno = new Alumno()
                 {
                     PkMatricula = userId,
-                    Nombre = txtNombre.Text + " " + txtApellido.Text
+                    Nombre = txtNombre.Text + " " + txtApellido.Text,
+                    FkGrado = int.Parse(SelectGrado.SelectedValue.ToString())
                 };
                 services.UpdateAlumno(alumno);
                 MessageBox.Show("Alumno modificado");
@@ -87,6 +90,7 @@ namespace ProyectoFinal_23AM.Vistas
                 alumno.PkMatricula = userId;
                 services.DeleteAlumno(userId);
                 MessageBox.Show("Alumno Eliminado");
+
                 txtNombre.Clear();
                 txtApellido.Clear();
                 LabelNombre.Visibility = Visibility.Hidden;
@@ -102,6 +106,13 @@ namespace ProyectoFinal_23AM.Vistas
         public void GetAlumnosTable()
         {
             UserTable.ItemsSource = services.GetAlumnos();
+
+        }
+        public void GetGradoTable()
+        {
+            SelectGrado.ItemsSource = services.GetGrado();
+            SelectGrado.DisplayMemberPath = "Grado";
+            SelectGrado.SelectedValuePath = "PkGrado";
         }
         private void BtnAlumnos_Click(object sender, RoutedEventArgs e)
         {

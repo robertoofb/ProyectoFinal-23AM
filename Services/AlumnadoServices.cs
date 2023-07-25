@@ -23,6 +23,7 @@ namespace ProyectoFinal_23AM.Services
                         Alumno res = new Alumno()
                         {
                             Nombre = request.Nombre,
+                            FkGrado= request.FkGrado
                         };
                         _context.alumnos.Add(res);
                         _context.SaveChanges();
@@ -42,6 +43,7 @@ namespace ProyectoFinal_23AM.Services
                 {
                     Alumno update = _context.alumnos.Find(request.PkMatricula);
                     update.Nombre = request.Nombre;
+                    update.FkGrado = request.FkGrado;
 
                     _context.alumnos.Update(update);
                     _context.SaveChanges();
@@ -105,6 +107,42 @@ namespace ProyectoFinal_23AM.Services
                     List<Calificaciones> alumnos = new List<Calificaciones>();
 
                     alumnos = _context.calificaciones.Include(x => x.Materias).Include(x => x.Grados).Include(x => x.Alumnos).ToList();
+
+                    return alumnos;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Sucedió un error " + ex.Message);
+            }
+        }
+        public List<Grados> GetGrado()
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    List<Grados> grados = new List<Grados>();
+
+                    grados = _context.grados.ToList();
+
+                    return grados;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Sucedió un error " + ex.Message);
+            }
+        }
+        public List<Calificaciones> GetMateria()
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    List<Calificaciones> alumnos = new List<Calificaciones>();
+
+                    alumnos = _context.calificaciones.Include(x => x.Materias).ToList();
 
                     return alumnos;
                 }
