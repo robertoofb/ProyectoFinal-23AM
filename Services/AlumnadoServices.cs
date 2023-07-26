@@ -104,11 +104,11 @@ namespace ProyectoFinal_23AM.Services
             {
                 using (var _context = new ApplicationDbContext())
                 {
-                    List<Calificaciones> alumnos = new List<Calificaciones>();
+                    List<Calificaciones> calificaciones = new List<Calificaciones>();
 
-                    alumnos = _context.calificaciones.Include(x => x.Materias).Include(x => x.Grados).Include(x => x.Alumnos).ToList();
+                    calificaciones = _context.calificaciones.Include(x => x.Materias).Include(x => x.Grados).Include(x => x.Alumnos).ToList();
 
-                    return alumnos;
+                    return calificaciones;
                 }
             }
             catch (Exception ex)
@@ -116,17 +116,17 @@ namespace ProyectoFinal_23AM.Services
                 throw new Exception("Sucedió un error " + ex.Message);
             }
         }
-        public List<Grados> GetGrado()
+        public List<Alumno> GetGrado()
         {
             try
             {
                 using (var _context = new ApplicationDbContext())
                 {
-                    List<Grados> grados = new List<Grados>();
+                    List<Alumno> alumnos = new List<Alumno>();
 
-                    grados = _context.grados.ToList();
+                    alumnos = _context.alumnos.Include(x => x.Grados).ToList();
 
-                    return grados;
+                    return alumnos;
                 }
             }
             catch (Exception ex)

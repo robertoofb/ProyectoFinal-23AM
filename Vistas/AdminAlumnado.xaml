@@ -64,6 +64,6 @@
             </Label.RenderTransform>
         </Label>
         <Label Content="Grado" HorizontalAlignment="Left" Height="26" Margin="29,285,0,0" VerticalAlignment="Top" Width="176" Foreground="White"/>
-        <ComboBox x:Name="SelectGrado" HorizontalAlignment="Left" Height="20" Margin="29,316,0,0" VerticalAlignment="Top" Width="148"/>
+        <TextBox x:Name="txtGrado" HorizontalAlignment="Left" Height="19" Margin="29,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"/>
     </Grid>
 </Window>
