@@ -134,16 +134,15 @@ namespace ProyectoFinal_23AM.Services
                 throw new Exception("Sucedió un error " + ex.Message);
             }
         }
-        public List<Calificaciones> GetCalificacionesTutor()
+        public List<Calificaciones> GetCalificacionesTutor(string Nombre)
         {
             try
             {
                 using (var _context = new ApplicationDbContext())
                 {
                     List<Calificaciones> calificaciones = new List<Calificaciones>();
-                    Tutor ola = new Tutor();
 
-                    calificaciones = _context.calificaciones.Where(x => x.Alumnos.Nombre == ola.txtNombre.Text).Include(x => x.Materias).Include(x => x.Grados).ToList();
+                    calificaciones = _context.calificaciones.Where(x => x.Alumnos.Nombre == Nombre).Include(x => x.Materias).Include(x => x.Grados).Include(x => x.Alumnos).ToList();
                     return calificaciones;
                 }
             }

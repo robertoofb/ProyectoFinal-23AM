@@ -16,14 +16,20 @@
         </Button>
         <Label Content="Nombre" HorizontalAlignment="Left" Height="26" Margin="29,100,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
         <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="20" Margin="29,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237"/>
-        <Button x:Name="BtnBuscar" Content="Buscar" HorizontalAlignment="Left" Height="28" Margin="291,122,0,0" VerticalAlignment="Top" Width="50" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White" Click="BtnMaterias_Click"/>
-        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="29,170,228,10">
+        <Button x:Name="BtnBuscar" Content="Buscar Alumno" HorizontalAlignment="Center" Height="28" Margin="0,122,0,0" VerticalAlignment="Top" Width="92" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White" Click="BtnMaterias_Click"/>
+        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="29,170,297,10">
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Alumnos.Nombre}"/>
                 <DataGridTextColumn Header="Grado" Binding="{Binding Grados.Grado}" Width="50"/>
                 <DataGridTextColumn Header="Materia" Binding="{Binding Materias.Materia}" Width="130"/>
                 <DataGridTextColumn Header="Calificación" Binding="{Binding Calificación}" Width="80"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <DataGrid x:Name="UserTableO" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="547,170,21,10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Observaciones" Binding="{Binding Observación}"/>
             </DataGrid.Columns>
 
         </DataGrid>

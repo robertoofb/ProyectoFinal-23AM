@@ -18,7 +18,7 @@
         <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="19" Margin="29,198,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"/>
         <Button x:Name="BtnAdd" Content="Guardar" HorizontalAlignment="Left" Height="27" Margin="107,350,0,0" VerticalAlignment="Top" Width="70" Background="#FF6BA4E0" Click="BtnAdd_Click" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White"/>
 
-        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="192,182,28,24">
+        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="192,182,28,24" SelectionChanged="UserTable_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Matrícula" Binding="{Binding PkMatricula}" Width="80"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>

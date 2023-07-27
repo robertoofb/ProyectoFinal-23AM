@@ -148,5 +148,10 @@ namespace ProyectoFinal_23AM.Vistas
             calif.Show();
             Close();
         }
+
+        private void UserTable_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

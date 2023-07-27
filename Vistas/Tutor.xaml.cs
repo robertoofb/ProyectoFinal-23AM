@@ -25,6 +25,7 @@ namespace ProyectoFinal_23AM.Vistas
             InitializeComponent();
         }
         AlumnadoServices services = new AlumnadoServices();
+        ObservacionesServices servicess = new ObservacionesServices();
         private void BtnVolver_Click(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
@@ -33,11 +34,16 @@ namespace ProyectoFinal_23AM.Vistas
         }
         public void GetCalificacionesTable()
         {
-            UserTable.ItemsSource = services.GetCalificacionesTutor();
+            UserTable.ItemsSource = services.GetCalificacionesTutor(txtNombre.Text);
+        }
+        public void GetObservacionesTable()
+        {
+            UserTableO.ItemsSource = servicess.GetObservaciones(txtNombre.Text);
         }
         private void BtnMaterias_Click(object sender, RoutedEventArgs e)
         {
             GetCalificacionesTable();
+            GetObservacionesTable();
         }
     }
 }

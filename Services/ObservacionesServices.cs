@@ -1,4 +1,5 @@
-﻿using ProyectoFinal_23AM.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using ProyectoFinal_23AM.Context;
 using ProyectoFinal_23AM.Entities;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,23 @@ namespace ProyectoFinal_23AM.Services
             catch (Exception ex)
             {
                 throw new Exception("Ocurrió un error " + ex.Message);
+            }
+        }
+        public List<Observaciones> GetObservaciones(string Nombre)
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    List<Observaciones> observaciones = new List<Observaciones>();
+
+                    observaciones = _context.observaciones.Where(x => x.Alumnos.Nombre == Nombre).ToList();
+                    return observaciones;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Sucedió un error " + ex.Message);
             }
         }
     }
