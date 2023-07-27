@@ -1,0 +1,32 @@
+﻿<Window x:Class="ProyectoFinal_23AM.Vistas.Tutor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoFinal_23AM.Vistas"
+        mc:Ignorable="d"
+        Title="Tutor" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF7AA5D2">
+        <Label FontSize="32" Content="Bienvenido Tutor" HorizontalAlignment="Center" Height="62" VerticalAlignment="Top" Width="264" Foreground="White" Background="#FF6BA4E0" BorderThickness="3,3,3,3" BorderBrush="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,21,0,0"/>
+        <Button x:Name="BtnVolver" Content="" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" VerticalAlignment="Top" Width="38" BorderThickness="0,0,0,0" Click="BtnVolver_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/MainWindowImages/volver-flecha.png"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Nombre" HorizontalAlignment="Left" Height="26" Margin="29,100,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="20" Margin="29,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237"/>
+        <Button x:Name="BtnBuscar" Content="Buscar" HorizontalAlignment="Left" Height="28" Margin="291,122,0,0" VerticalAlignment="Top" Width="50" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White" Click="BtnMaterias_Click"/>
+        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="29,170,228,10">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Alumnos.Nombre}"/>
+                <DataGridTextColumn Header="Grado" Binding="{Binding Grados.Grado}" Width="50"/>
+                <DataGridTextColumn Header="Materia" Binding="{Binding Materias.Materia}" Width="130"/>
+                <DataGridTextColumn Header="Calificación" Binding="{Binding Calificación}" Width="80"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+    </Grid>
+</Window>

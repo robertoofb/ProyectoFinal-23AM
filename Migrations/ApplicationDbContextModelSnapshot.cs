@@ -98,6 +98,26 @@ namespace ProyectoFinal_23AM.Migrations
                     b.ToTable("materias");
                 });
 
+            modelBuilder.Entity("ProyectoFinal_23AM.Entities.Observaciones", b =>
+                {
+                    b.Property<int>("PkObervaciones")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("FkMatricula")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Observación")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("PkObervaciones");
+
+                    b.HasIndex("FkMatricula");
+
+                    b.ToTable("observaciones");
+                });
+
             modelBuilder.Entity("ProyectoFinal_23AM.Entities.Rol", b =>
                 {
                     b.Property<int>("PkRol")
@@ -175,6 +195,15 @@ namespace ProyectoFinal_23AM.Migrations
                     b.Navigation("Grados");
 
                     b.Navigation("Materias");
+                });
+
+            modelBuilder.Entity("ProyectoFinal_23AM.Entities.Observaciones", b =>
+                {
+                    b.HasOne("ProyectoFinal_23AM.Entities.Alumno", "Alumnos")
+                        .WithMany()
+                        .HasForeignKey("FkMatricula");
+
+                    b.Navigation("Alumnos");
                 });
 
             modelBuilder.Entity("ProyectoFinal_23AM.Entities.Usuario", b =>

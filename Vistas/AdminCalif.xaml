@@ -13,7 +13,7 @@
                 <DataGridTextColumn Header="Id" Binding="{Binding PkCalificaciones}" Width="50"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Alumnos.Nombre}"/>
                 <DataGridTextColumn Header="Grado" Binding="{Binding Grados.Grado}" Width="50"/>
-                <DataGridTextColumn Header="Materia" Binding="{Binding Materias.Materia}" Width="100"/>
+                <DataGridTextColumn Header="Materia" Binding="{Binding Materias.Materia}" Width="130"/>
                 <DataGridTextColumn Header="Calificación" Binding="{Binding Calificación}" Width="80"/>
             </DataGrid.Columns>
 

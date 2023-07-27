@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProyectoFinal_23AM.Context;
 using ProyectoFinal_23AM.Entities;
+using ProyectoFinal_23AM.Vistas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -108,6 +109,41 @@ namespace ProyectoFinal_23AM.Services
 
                     calificaciones = _context.calificaciones.Include(x => x.Materias).Include(x => x.Grados).Include(x => x.Alumnos).ToList();
 
+                    return calificaciones;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Sucedió un error " + ex.Message);
+            }
+        }
+        public List<Calificaciones> GetCalificacionesPsicólogo()
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    List<Calificaciones> calificaciones = new List<Calificaciones>();
+
+                    calificaciones = _context.calificaciones.Where(x => x.Calificación < 6).Include(x => x.Materias).Include(x => x.Grados).Include(x => x.Alumnos).ToList();
+                    return calificaciones;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Sucedió un error " + ex.Message);
+            }
+        }
+        public List<Calificaciones> GetCalificacionesTutor()
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    List<Calificaciones> calificaciones = new List<Calificaciones>();
+                    Tutor ola = new Tutor();
+
+                    calificaciones = _context.calificaciones.Where(x => x.Alumnos.Nombre == ola.txtNombre.Text).Include(x => x.Materias).Include(x => x.Grados).ToList();
                     return calificaciones;
                 }
             }

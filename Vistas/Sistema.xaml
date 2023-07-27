@@ -25,14 +25,14 @@
                 <DataGridTextColumn Header="Contraseña" Binding="{Binding Password}" />
                 <DataGridTextColumn Header="Puesto" Binding="{Binding Roles.Nombre}" />
 
-                <DataGridTemplateColumn Header="Editar">
+                <DataGridTemplateColumn Header="Editar" Width="50">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Background="Aqua" Content="Select" Click="EditItem" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Delete">
+                <DataGridTemplateColumn Header="Delete" Width="50">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="Delete" Click="DeleteItem"/>

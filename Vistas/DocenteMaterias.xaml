@@ -12,7 +12,7 @@
         <DataGrid x:Name="AlumnoTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="59,112,64,44">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Clave" Binding="{Binding PkMateria}" Width="80"/>
-                <DataGridTextColumn Header="Mateeria" Binding="{Binding Materia}"/>
+                <DataGridTextColumn Header="Materia" Binding="{Binding Materia}"/>
             </DataGrid.Columns>
 
         </DataGrid>

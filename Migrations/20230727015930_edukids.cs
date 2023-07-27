@@ -3,7 +3,7 @@ using MySql.EntityFrameworkCore.Metadata;
 
 namespace ProyectoFinal_23AM.Migrations
 {
-    public partial class Edukids : Migration
+    public partial class edukids : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -122,6 +122,26 @@ namespace ProyectoFinal_23AM.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "observaciones",
+                columns: table => new
+                {
+                    PkObervaciones = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySQL:ValueGenerationStrategy", MySQLValueGenerationStrategy.IdentityColumn),
+                    Observación = table.Column<string>(type: "text", nullable: false),
+                    FkMatricula = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_observaciones", x => x.PkObervaciones);
+                    table.ForeignKey(
+                        name: "FK_observaciones_alumnos_FkMatricula",
+                        column: x => x.FkMatricula,
+                        principalTable: "alumnos",
+                        principalColumn: "PkMatricula",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_alumnos_FkGrado",
                 table: "alumnos",
@@ -143,6 +163,11 @@ namespace ProyectoFinal_23AM.Migrations
                 column: "FkMatricula");
 
             migrationBuilder.CreateIndex(
+                name: "IX_observaciones_FkMatricula",
+                table: "observaciones",
+                column: "FkMatricula");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Usuarios_FkRol",
                 table: "Usuarios",
                 column: "FkRol");
@@ -154,13 +179,16 @@ namespace ProyectoFinal_23AM.Migrations
                 name: "calificaciones");
 
             migrationBuilder.DropTable(
+                name: "observaciones");
+
+            migrationBuilder.DropTable(
                 name: "Usuarios");
 
             migrationBuilder.DropTable(
-                name: "alumnos");
+                name: "materias");
 
             migrationBuilder.DropTable(
-                name: "materias");
+                name: "alumnos");
 
             migrationBuilder.DropTable(
                 name: "Roles");

@@ -20,20 +20,20 @@
 
         <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="227,130,66,37">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding PkUsuario}" />
+                <DataGridTextColumn Header="Id" Binding="{Binding PkUsuario}" Width="30"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" />
                 <DataGridTextColumn Header="Usuario" Binding="{Binding UserName}" />
                 <DataGridTextColumn Header="Contraseña" Binding="{Binding Password}" />
                 <DataGridTextColumn Header="Puesto" Binding="{Binding Roles.Nombre}" />
 
-                <DataGridTemplateColumn Header="Editar">
+                <DataGridTemplateColumn Header="Editar" Width="50">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Background="Aqua" Content="Select" Click="EditItem" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Delete">
+                <DataGridTemplateColumn Header="Delete" Width="50">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="Delete" Click="DeleteItem"/>

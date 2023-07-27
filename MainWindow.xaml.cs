@@ -48,9 +48,21 @@ namespace ProyectoFinal_23AM
                     sistema.Show();
                     Close();
                 }
-                else if(response.Roles.Nombre == "Docentes")
+                else if(response.Roles.Nombre == "Docente")
                 {
                     Docente sistema = new Docente();
+                    sistema.Show();
+                    Close();
+                }
+                else if (response.Roles.Nombre == "Psicólogo")
+                {
+                    Psicólogo sistema = new Psicólogo();
+                    sistema.Show();
+                    Close();
+                }
+                else if (response.Roles.Nombre == "Tutor")
+                {
+                    Tutor sistema = new Tutor();
                     sistema.Show();
                     Close();
                 }

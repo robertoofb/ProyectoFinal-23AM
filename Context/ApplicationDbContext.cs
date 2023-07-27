@@ -23,6 +23,7 @@ namespace ProyectoFinal_23AM.Context
         public DbSet<Grados> grados { get; set; }
         public DbSet<Materias> materias { get; set; }
         public DbSet<Calificaciones> calificaciones { get; set; }
+        public DbSet<Observaciones> observaciones { get; set; }
 
 
     }

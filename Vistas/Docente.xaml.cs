@@ -49,6 +49,7 @@ namespace ProyectoFinal_23AM.Vistas
             txtMatricula.Text = alumno.PkMatricula.ToString();
             txtNombre.Text = alumno.Nombre.ToString();
             txtGrado.Text = alumno.FkGrado.ToString();
+            editcalif.Visibility = Visibility.Visible;
         }
         public void EditItemCalif(object sender, RoutedEventArgs e)
         {
@@ -75,7 +76,7 @@ namespace ProyectoFinal_23AM.Vistas
                     FkMatricula = int.Parse(txtMatricula.Text),
                     FkMateria = int.Parse(txtMateria.Text),
                     FkGrado = int.Parse(txtGrado.Text),
-                    Calificación = int.Parse(txtCalificacion.Text)
+                    Calificación = decimal.Parse(txtCalificacion.Text)
                 };
 
                 servicess.AddCalificacion(calificaciones);
@@ -86,6 +87,7 @@ namespace ProyectoFinal_23AM.Vistas
                 txtMatricula.Clear();
                 txtCalificacion.Clear();
                 txtMateria.Clear();
+                editcalif.Visibility = Visibility.Hidden;
             }
             else
             {
@@ -97,7 +99,7 @@ namespace ProyectoFinal_23AM.Vistas
                     FkMatricula = int.Parse(txtMatricula.Text),
                     FkMateria = int.Parse(txtMateria.Text),
                     FkGrado = int.Parse(txtGrado.Text),
-                    Calificación = int.Parse(txtCalificacion.Text)
+                    Calificación = decimal.Parse(txtCalificacion.Text)
                 };
 
                 servicess.UpdateCalificacion(calificaciones);
@@ -108,6 +110,7 @@ namespace ProyectoFinal_23AM.Vistas
                 txtMatricula.Clear();
                 txtCalificacion.Clear();
                 txtMateria.Clear();
+                editcalif.Visibility = Visibility.Hidden;
             }
         }
         public void GetCalificacionesTable()
