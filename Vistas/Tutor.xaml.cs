@@ -1,4 +1,5 @@
-﻿using ProyectoFinal_23AM.Services;
+﻿using ProyectoFinal_23AM.Entities;
+using ProyectoFinal_23AM.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,6 +45,12 @@ namespace ProyectoFinal_23AM.Vistas
         {
             GetCalificacionesTable();
             GetObservacionesTable();
+        }
+        public void EditItem(object sender, RoutedEventArgs e)
+        {
+            Observaciones observaciones = new Observaciones();
+            observaciones = (sender as FrameworkElement).DataContext as Observaciones;
+            txtObservación.Text = observaciones.Observación.ToString();
         }
     }
 }

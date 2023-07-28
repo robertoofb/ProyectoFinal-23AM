@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal_23AM.Vistas"
         mc:Ignorable="d"
-        Title="Tutor" Height="450" Width="800"
+        Title="Tutor" Height="470" Width="800"
         WindowStartupLocation="CenterScreen">
     <Grid Background="#FF7AA5D2">
         <Label FontSize="32" Content="Bienvenido Tutor" HorizontalAlignment="Center" Height="62" VerticalAlignment="Top" Width="264" Foreground="White" Background="#FF6BA4E0" BorderThickness="3,3,3,3" BorderBrush="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,21,0,0"/>
@@ -17,7 +17,7 @@
         <Label Content="Nombre" HorizontalAlignment="Left" Height="26" Margin="29,100,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
         <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="20" Margin="29,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="237"/>
         <Button x:Name="BtnBuscar" Content="Buscar Alumno" HorizontalAlignment="Center" Height="28" Margin="0,122,0,0" VerticalAlignment="Top" Width="92" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White" Click="BtnMaterias_Click"/>
-        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="29,170,297,10">
+        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="29,170,297,33">
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Alumnos.Nombre}"/>
@@ -27,9 +27,18 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <DataGrid x:Name="UserTableO" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="547,170,21,10">
+        <Label Content="Observaciones" HorizontalAlignment="Left" Height="26" Margin="546,132,0,0" VerticalAlignment="Top" Width="92" Foreground="White" RenderTransformOrigin="0.663,1.809"/>
+        <TextBox x:Name="txtObservación" HorizontalAlignment="Left" Height="125" Margin="508,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="255" Background="#FFF0F0F0"/>
+        <DataGrid x:Name="UserTableO" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="508,170,37,173">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Observaciones" Binding="{Binding Observación}"/>
+                <DataGridTextColumn Header="ID Observación" Binding="{Binding PkObervaciones}"/>
+                <DataGridTemplateColumn Header="Seleccionar" Width="72">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Background="Aqua" Content="Select" Click="EditItem" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
 
         </DataGrid>
