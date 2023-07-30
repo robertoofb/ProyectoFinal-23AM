@@ -1,0 +1,48 @@
+﻿<Window x:Class="ProyectoFinal_23AM.Vistas.DocenteUpdate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoFinal_23AM.Vistas"
+        mc:Ignorable="d"
+        Title="DocenteUpdate" Height="480" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF7AA5D2">
+        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="149,133,38,91">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding PkCalificaciones}" Width="30"/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding Alumnos.Nombre}" Width="210"/>
+                <DataGridTextColumn Header="Grado" Binding="{Binding Grados.Grado}" Width="50"/>
+                <DataGridTextColumn Header="Materia" Binding="{Binding Materias.Materia}" Width="120"/>
+                <DataGridTextColumn Header="Calificación" Binding="{Binding Calificación}" Width="80"/>
+                <DataGridTemplateColumn Header="Editar" Width="90" MaxWidth="90">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Background="Aqua" Content="Select" Click="EditItemCalif" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Label FontSize="35" Content="Bienvenido Docente" HorizontalAlignment="Center" Height="70" VerticalAlignment="Top" Width="388" Foreground="White" Background="#FF6BA4E0" BorderThickness="3,3,3,3" BorderBrush="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,22,0,0"/>
+        <Label Content="Calificación" HorizontalAlignment="Left" Height="24" Margin="29,321,0,0" VerticalAlignment="Top" Width="70" Foreground="White"/>
+        <TextBox x:Name="txtCalificacion" HorizontalAlignment="Left" Height="20" Margin="29,353,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86"/>
+        <Label Content="Clave Materia" HorizontalAlignment="Left" Height="24" Margin="29,273,0,0" VerticalAlignment="Top" Width="86" Foreground="White"/>
+        <TextBox x:Name="txtMateria" HorizontalAlignment="Left" Height="20" Margin="29,301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86"/>
+        <Label Content="ID" HorizontalAlignment="Left" Height="26" Margin="29,104,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
+        <TextBox x:Name="txtId" HorizontalAlignment="Left" Height="20" Margin="29,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="55" IsEnabled="False"/>
+        <Label Content="Matrícula" HorizontalAlignment="Left" Height="26" Margin="29,164,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
+        <TextBox x:Name="txtMatricula" HorizontalAlignment="Left" Height="20" Margin="29,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" IsEnabled="False"/>
+        <Label Content="Grado" HorizontalAlignment="Left" Height="24" Margin="29,214,0,0" VerticalAlignment="Top" Width="48" Foreground="White"/>
+        <TextBox x:Name="txtGrado" HorizontalAlignment="Left" Height="20" Margin="29,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86" IsEnabled="False"/>
+        <Button x:Name="BtnVolver" Content="" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" VerticalAlignment="Top" Width="38" BorderThickness="0,0,0,0" Click="BtnVolver_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/MainWindowImages/volver-flecha.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnUpdateCalif" Content="Modificar Calificación" HorizontalAlignment="Left" Height="28" Margin="148,390,0,0" VerticalAlignment="Top" Width="132" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White" Click="BtnUpdateCalif_Click"/>
+        <Button x:Name="BtnClearCalif" Content="Limpiar" HorizontalAlignment="Left" Height="28" Margin="47,390,0,0" VerticalAlignment="Top" Width="50" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White" Click="BtnClearCalif_Click"/>
+
+    </Grid>
+</Window>

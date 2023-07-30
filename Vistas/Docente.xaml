@@ -5,20 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoFinal_23AM.Vistas"
         mc:Ignorable="d"
-        Title="Docente" Height="656" Width="1050"
+        Title="Docente" Height="700" Width="900"
         WindowStartupLocation="CenterScreen">
     <Grid Background="#FF7AA5D2" Margin="0,0,0,-6">
-        <Label FontSize="35" Content="Bienvenido Docente" HorizontalAlignment="Center" Height="70" VerticalAlignment="Top" Width="388" Foreground="White" Background="#FF6BA4E0" BorderThickness="3,3,3,3" BorderBrush="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,22,0,0"/>
+        <Label FontSize="48" Content="Bienvenido Docente" HorizontalAlignment="Left" Height="84" VerticalAlignment="Top" Width="456" Foreground="White" Background="#FF6BA4E0" BorderThickness="3,3,3,3" BorderBrush="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="220,22,0,0"/>
         <Button x:Name="BtnVolver" Content="" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" VerticalAlignment="Top" Width="38" BorderThickness="0,0,0,0" Click="BtnVolver_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/MainWindowImages/volver-flecha.png"/>
             </Button.Background>
         </Button>
-        <Label Content="Calificación" HorizontalAlignment="Left" Height="24" Margin="698,227,0,0" VerticalAlignment="Top" Width="70" Foreground="White"/>
-        <TextBox x:Name="txtCalificacion" HorizontalAlignment="Left" Height="20" Margin="698,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
-        <Label Content="Nombre" HorizontalAlignment="Left" Height="26" Margin="172,275,0,0" VerticalAlignment="Top" Width="210" Foreground="White"/>
-        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="20" Margin="172,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" IsEnabled="False"/>
-        <DataGrid x:Name="AlumnoTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="28,350,604,24">
+        <Label Content="Calificación" HorizontalAlignment="Left" Height="24" Margin="625,242,0,0" VerticalAlignment="Top" Width="70" Foreground="White"/>
+        <TextBox x:Name="txtCalificacion" HorizontalAlignment="Left" Height="20" Margin="625,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="70"/>
+        <Label Content="Nombre" HorizontalAlignment="Left" Height="26" Margin="219,290,0,0" VerticalAlignment="Top" Width="210" Foreground="White"/>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="20" Margin="219,321,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" IsEnabled="False"/>
+        <DataGrid x:Name="AlumnoTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="86,370,86,25">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Matrícula" Binding="{Binding PkMatricula}" Width="80"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}"/>
@@ -34,38 +34,16 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <Label Content="Matrícula" HorizontalAlignment="Left" Height="26" Margin="172,223,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
-        <TextBox x:Name="txtMatricula" HorizontalAlignment="Left" Height="20" Margin="172,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" IsEnabled="False"/>
-        <Label Content="Grado" HorizontalAlignment="Left" Height="24" Margin="286,221,0,0" VerticalAlignment="Top" Width="48" Foreground="White"/>
-        <TextBox x:Name="txtGrado" HorizontalAlignment="Left" Height="20" Margin="286,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" IsEnabled="False"/>
-        <Button x:Name="BtnClear" Content="Limpiar" HorizontalAlignment="Left" Height="28" Margin="84,250,0,0" VerticalAlignment="Top" Width="50" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White" Click="BtnClear_Click"/>
-        <Label Content="Clave Materia" HorizontalAlignment="Left" Height="24" Margin="564,225,0,0" VerticalAlignment="Top" Width="86" Foreground="White"/>
-        <TextBox x:Name="txtMateria" HorizontalAlignment="Left" Height="20" Margin="564,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110"/>
-        <Button x:Name="BtnAddCalif" Content="Agregar Calificación" HorizontalAlignment="Left" Height="28" Margin="698,297,0,0" VerticalAlignment="Top" Width="132" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White" Click="BtnAddCalif_Click"/>
-        <Label FontSize="16" Content="1. Selecciona un Alumno" HorizontalAlignment="Left" Height="43" Margin="136,160,0,0" VerticalAlignment="Top" Width="202" Foreground="White" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <Label FontSize="16" Content="2. Ingresa Clave y Calificación" HorizontalAlignment="Left" Height="42" Margin="628,161,0,0" VerticalAlignment="Top" Width="244" Foreground="White" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-        <DataGrid x:Name="UserTable" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="474,350,25,24">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding PkCalificaciones}" Width="30"/>
-                <DataGridTextColumn Header="Nombre" Binding="{Binding Alumnos.Nombre}" Width="190"/>
-                <DataGridTextColumn Header="Grado" Binding="{Binding Grados.Grado}" Width="50"/>
-                <DataGridTextColumn Header="Materia" Binding="{Binding Materias.Materia}" Width="115"/>
-                <DataGridTextColumn Header="Calificación" Binding="{Binding Calificación}" Width="70"/>
-                <DataGridTemplateColumn Header="Editar" Width="70">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Background="Aqua" Content="Select" Click="EditItemCalif" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-
-        </DataGrid>
-        <Label Content="ID" HorizontalAlignment="Left" Height="26" Margin="872,227,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
-        <TextBox x:Name="txtId" HorizontalAlignment="Left" Height="20" Margin="872,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="52" IsEnabled="False"/>
-        <Button x:Name="BtnClearCalif" Content="Limpiar" HorizontalAlignment="Left" Height="28" Margin="872,297,0,0" VerticalAlignment="Top" Width="50" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White" Click="BtnClearCalif_Click"/>
-        <Button x:Name="BtnMaterias" Content="Materias" HorizontalAlignment="Left" Height="28" Margin="590,296,0,0" VerticalAlignment="Top" Width="58" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White" Click="BtnMaterias_Click"/>
-        <Label x:Name="editcalif" Content="Selecciona registro en caso de querer modificar" HorizontalAlignment="Left" Height="30" Margin="616,112,0,0" VerticalAlignment="Top" Width="268" Foreground="White" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Visibility="Hidden"/>
-
+        <Label Content="Matrícula" HorizontalAlignment="Left" Height="26" Margin="219,238,0,0" VerticalAlignment="Top" Width="66" Foreground="White"/>
+        <TextBox x:Name="txtMatricula" HorizontalAlignment="Left" Height="20" Margin="219,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" IsEnabled="False"/>
+        <Label Content="Grado" HorizontalAlignment="Left" Height="24" Margin="333,236,0,0" VerticalAlignment="Top" Width="48" Foreground="White"/>
+        <TextBox x:Name="txtGrado" HorizontalAlignment="Left" Height="20" Margin="333,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" IsEnabled="False"/>
+        <Button x:Name="BtnClear" Content="Limpiar" HorizontalAlignment="Left" Height="28" Margin="131,265,0,0" VerticalAlignment="Top" Width="50" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White" Click="BtnClear_Click"/>
+        <Label Content="Clave Materia" HorizontalAlignment="Left" Height="24" Margin="513,240,0,0" VerticalAlignment="Top" Width="86" Foreground="White"/>
+        <TextBox x:Name="txtMateria" HorizontalAlignment="Left" Height="20" Margin="513,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="86"/>
+        <Button x:Name="BtnAddCalif" Content="Agregar Calificación" HorizontalAlignment="Left" Height="28" Margin="625,317,0,0" VerticalAlignment="Top" Width="132" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White" Click="BtnAddCalif_Click"/>
+        <Label FontSize="16" Content="1. Selecciona un Alumno" HorizontalAlignment="Left" Height="43" Margin="198,175,0,0" VerticalAlignment="Top" Width="202" Foreground="White" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label FontSize="16" Content="2. Ingresa Clave y Calificación" HorizontalAlignment="Left" Height="42" Margin="513,169,0,0" VerticalAlignment="Top" Width="244" Foreground="White" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="BtnMaterias" Content="Materias" HorizontalAlignment="Left" Height="28" Margin="527,317,0,0" VerticalAlignment="Top" Width="58" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White" Click="BtnMaterias_Click"/>
     </Grid>
 </Window>

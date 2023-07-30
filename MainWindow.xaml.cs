@@ -50,7 +50,7 @@ namespace ProyectoFinal_23AM
                 }
                 else if(response.Roles.Nombre == "Docente")
                 {
-                    Docente sistema = new Docente();
+                    MenuDocente sistema = new MenuDocente();
                     sistema.Show();
                     Close();
                 }

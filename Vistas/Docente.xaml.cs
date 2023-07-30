@@ -26,14 +26,13 @@ namespace ProyectoFinal_23AM.Vistas
         {
             InitializeComponent();
             GetAlumnosTable();
-            GetCalificacionesTable();
         }
         AlumnadoServices services = new AlumnadoServices();
         Calificaciones calificaciones = new Calificaciones();
         CalificacionesServices servicess = new CalificacionesServices();
         private void BtnVolver_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow main= new MainWindow();
+            MenuDocente main= new MenuDocente();
             main.Show();
             Close();
         }
@@ -49,15 +48,6 @@ namespace ProyectoFinal_23AM.Vistas
             txtMatricula.Text = alumno.PkMatricula.ToString();
             txtNombre.Text = alumno.Nombre.ToString();
             txtGrado.Text = alumno.FkGrado.ToString();
-            editcalif.Visibility = Visibility.Visible;
-        }
-        public void EditItemCalif(object sender, RoutedEventArgs e)
-        {
-            Calificaciones calificaciones = new Calificaciones();
-            calificaciones = (sender as FrameworkElement).DataContext as Calificaciones;
-            txtId.Text = calificaciones.PkCalificaciones.ToString();
-            txtMateria.Text = calificaciones.FkMateria.ToString();
-            txtCalificacion.Text = calificaciones.Calificación.ToString();
         }
 
         private void BtnClear_Click(object sender, RoutedEventArgs e)
@@ -65,11 +55,17 @@ namespace ProyectoFinal_23AM.Vistas
             txtNombre.Clear();
             txtGrado.Clear();
             txtMatricula.Clear();
+            txtMateria.Clear();
+            txtCalificacion.Clear();
         }
 
         private void BtnAddCalif_Click(object sender, RoutedEventArgs e)
         {
-            if (txtId.Text == "")
+            if (txtMatricula.Text == "")
+            {
+                MessageBox.Show("Primero selecciona a un alumno");
+            }
+            else
             {
                 Calificaciones calificaciones = new Calificaciones()
                 {
@@ -81,50 +77,13 @@ namespace ProyectoFinal_23AM.Vistas
 
                 servicess.AddCalificacion(calificaciones);
                 MessageBox.Show("Calificación agregada");
-                GetCalificacionesTable();
                 txtNombre.Clear();
                 txtGrado.Clear();
                 txtMatricula.Clear();
                 txtCalificacion.Clear();
                 txtMateria.Clear();
-                editcalif.Visibility = Visibility.Hidden;
-            }
-            else
-            {
-                //hacer funcion editar y eliminar
-                int userId = Convert.ToInt32(txtId.Text);
-                Calificaciones calificaciones = new Calificaciones()
-                {
-                    PkCalificaciones = userId,
-                    FkMatricula = int.Parse(txtMatricula.Text),
-                    FkMateria = int.Parse(txtMateria.Text),
-                    FkGrado = int.Parse(txtGrado.Text),
-                    Calificación = decimal.Parse(txtCalificacion.Text)
-                };
-
-                servicess.UpdateCalificacion(calificaciones);
-                MessageBox.Show("Calificación modificada");
-                GetCalificacionesTable();
-                txtNombre.Clear();
-                txtGrado.Clear();
-                txtMatricula.Clear();
-                txtCalificacion.Clear();
-                txtMateria.Clear();
-                editcalif.Visibility = Visibility.Hidden;
             }
         }
-        public void GetCalificacionesTable()
-        {
-            UserTable.ItemsSource = services.GetCalificaciones();
-        }
-
-        private void BtnClearCalif_Click(object sender, RoutedEventArgs e)
-        {
-            txtMateria.Clear();
-            txtCalificacion.Clear();
-            txtId.Clear();
-        }
-
         private void BtnMaterias_Click(object sender, RoutedEventArgs e)
         {
             DocenteMaterias docente = new DocenteMaterias();
