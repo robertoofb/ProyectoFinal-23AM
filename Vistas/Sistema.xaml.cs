@@ -111,18 +111,10 @@ namespace ProyectoFinal_23AM.Vistas
 
         private void BtnVolver_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow main= new MainWindow();
+            MenuAdmin main= new MenuAdmin();
             main.Show();
             Close();
         }
-
-        private void BtnAlumnos_Click(object sender, RoutedEventArgs e)
-        {
-            AdminAlumnado alumno = new AdminAlumnado();
-            alumno.Show();
-            Close();
-        }
-
         private void BtnClear_Click(object sender, RoutedEventArgs e)
         {
             txtPkUser.Clear();

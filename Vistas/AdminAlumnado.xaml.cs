@@ -30,7 +30,7 @@ namespace ProyectoFinal_23AM.Vistas
 
         private void BtnVolver_Click(object sender, RoutedEventArgs e)
         {
-            Sistema main = new Sistema();
+            MenuAdmin main = new MenuAdmin();
             main.Show();
             Close();
         }
@@ -141,14 +141,6 @@ namespace ProyectoFinal_23AM.Vistas
             txtApellido.Clear();
             txtGrado.Clear();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            AdminCalif calif = new AdminCalif();
-            calif.Show();
-            Close();
-        }
-
         private void UserTable_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 

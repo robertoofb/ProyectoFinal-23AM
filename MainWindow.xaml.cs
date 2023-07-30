@@ -44,8 +44,8 @@ namespace ProyectoFinal_23AM
                 }
                 else if(response.Roles.Nombre == "Administrador")
                 {
-                    Sistema sistema = new Sistema();
-                    sistema.Show();
+                    MenuAdmin menu = new MenuAdmin();
+                    menu.Show();
                     Close();
                 }
                 else if(response.Roles.Nombre == "Docente")

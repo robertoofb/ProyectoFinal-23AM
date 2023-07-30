@@ -48,21 +48,6 @@
         <Label Content="Matrícula" HorizontalAlignment="Left" Height="25" Margin="192,123,0,0" VerticalAlignment="Top" Width="64" Foreground="White"/>
         <Label x:Name="LabelNombre" Content="Nombre Completo Actual" HorizontalAlignment="Left" Height="30" Margin="391,123,0,0" VerticalAlignment="Top" Width="149" Foreground="White" Visibility="Hidden"/>
         <TextBox x:Name="txtNombreCompleto" HorizontalAlignment="Left" Height="19" Margin="545,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" Visibility="Hidden"/>
-        <Button Content="" HorizontalAlignment="Left" Height="34" Margin="717,10,0,0" VerticalAlignment="Top" Width="43" BorderThickness="0,0,0,0" RenderTransformOrigin="0.5,0.5" Click="Button_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/MainWindowImages/calif.png"/>
-            </Button.Background>
-        </Button>
-        <Label Content="Calificaciones" HorizontalAlignment="Left" Height="24" Margin="703,39,0,0" VerticalAlignment="Top" Width="70" Foreground="White" Background="{x:Null}" RenderTransformOrigin="0.5,0.5" FontSize="10">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="4.764"/>
-                    <RotateTransform/>
-                    <TranslateTransform X="0.917"/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
         <Label Content="Grado" HorizontalAlignment="Left" Height="26" Margin="29,285,0,0" VerticalAlignment="Top" Width="176" Foreground="White"/>
         <TextBox x:Name="txtGrado" HorizontalAlignment="Left" Height="19" Margin="29,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"/>
     </Grid>

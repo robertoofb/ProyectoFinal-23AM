@@ -34,7 +34,7 @@ namespace ProyectoFinal_23AM.Vistas
 
         private void BtnVolver_Click(object sender, RoutedEventArgs e)
         {
-            AdminAlumnado admin = new AdminAlumnado();
+            MenuAdmin admin = new MenuAdmin();
             admin.Show();
             Close();
         }

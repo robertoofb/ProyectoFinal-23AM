@@ -1,0 +1,55 @@
+﻿<Window x:Class="ProyectoFinal_23AM.Vistas.MenuAdmin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoFinal_23AM.Vistas"
+        mc:Ignorable="d"
+        Title="MenuAdmin" Height="650" Width="500"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF7AA5D2">
+        <Label FontSize="36" Content="   Bienvenido &#xD;&#xA;Administrador" HorizontalAlignment="Center" Height="126" Margin="0,63,0,0" VerticalAlignment="Top" Foreground="White" Background="#FF6BA4E0" BorderThickness="3,3,3,3" BorderBrush="White" Width="254" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="BtnVolver" Content="" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" VerticalAlignment="Top" Width="38" BorderThickness="0,0,0,0" Click="BtnVolver_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/MainWindowImages/volver-flecha.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnUser" Content="" HorizontalAlignment="Left" Height="66" Margin="134,364,0,0" VerticalAlignment="Top" Width="80" BorderThickness="0,0,0,0" Click="BtnUser_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/MainWindowImages/usuario.png"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Usuarios" HorizontalAlignment="Left" Height="44" Margin="230,374,0,0" VerticalAlignment="Top" Width="86" Foreground="White" FontSize="20"/>
+        <Label Content="Alumnos" HorizontalAlignment="Left" Height="36" Margin="234,264,0,0" VerticalAlignment="Top" Width="92" Foreground="White" Background="{x:Null}" RenderTransformOrigin="0.5,0.5" FontSize="20">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="4.764"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.917"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button x:Name="BtnAlumnos" Content="" HorizontalAlignment="Left" Height="60" Margin="146,248,0,0" VerticalAlignment="Top" Width="66" BorderThickness="0,0,0,0" Click="BtnAlumnos_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/MainWindowImages/alumno.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnCalif" Content="" HorizontalAlignment="Left" Height="59" Margin="136,485,0,0" VerticalAlignment="Top" Width="76" BorderThickness="0,0,0,0" RenderTransformOrigin="0.5,0.5" Click="BtnCalif_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/MainWindowImages/calif.png"/>
+            </Button.Background>
+        </Button>
+        <Label Content="Calificaciones" HorizontalAlignment="Left" Height="34" Margin="225,498,0,0" VerticalAlignment="Top" Width="133" Foreground="White" Background="{x:Null}" RenderTransformOrigin="0.5,0.5" FontSize="20">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="4.764"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="0.917"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+
+    </Grid>
+</Window>

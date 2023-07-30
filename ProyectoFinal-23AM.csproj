@@ -11,11 +11,12 @@
   <ItemGroup>
     <None Remove="borrar.png" />
     <None Remove="fondo.jpg" />
+    <None Remove="MainWindowImages\alumno.png" />
     <None Remove="MainWindowImages\calif.png" />
     <None Remove="MainWindowImages\candado.png" />
     <None Remove="MainWindowImages\escoba %281%29.png" />
-    <None Remove="MainWindowImages\graduacion.png" />
     <None Remove="MainWindowImages\logo.PNG" />
+    <None Remove="MainWindowImages\usuario.png" />
     <None Remove="MainWindowImages\volver-flecha.png" />
   </ItemGroup>
 
@@ -31,11 +32,12 @@
   <ItemGroup>
     <Resource Include="borrar.png" />
     <Resource Include="fondo.jpg" />
+    <Resource Include="MainWindowImages\alumno.png" />
     <Resource Include="MainWindowImages\calif.png" />
     <Resource Include="MainWindowImages\candado.png" />
     <Resource Include="MainWindowImages\escoba (1).png" />
-    <Resource Include="MainWindowImages\graduacion.png" />
     <Resource Include="MainWindowImages\logo.PNG" />
+    <Resource Include="MainWindowImages\usuario.png" />
     <Resource Include="MainWindowImages\volver-flecha.png" />
   </ItemGroup>
 

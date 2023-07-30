@@ -50,21 +50,6 @@
                 <ImageBrush ImageSource="/MainWindowImages/volver-flecha.png"/>
             </Button.Background>
         </Button>
-        <Button x:Name="BtnAlumnos" Content="" HorizontalAlignment="Left" Height="28" Margin="740,10,0,0" VerticalAlignment="Top" Width="32" BorderThickness="0,0,0,0" Click="BtnAlumnos_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/MainWindowImages/graduacion.png"/>
-            </Button.Background>
-        </Button>
         <Button x:Name="BtnClear" Content="Limpiar" HorizontalAlignment="Left" Height="27" Margin="40,377,0,0" VerticalAlignment="Top" Width="70" Background="#FF6BA4E0" BorderThickness="2,2,2,2" BorderBrush="White" Foreground="White" Click="BtnClear_Click"/>
-        <Label Content="Alumnos" HorizontalAlignment="Left" Height="24" Margin="729,37,0,0" VerticalAlignment="Top" Width="49" Foreground="White" Background="{x:Null}" RenderTransformOrigin="0.5,0.5" FontSize="10">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="4.764"/>
-                    <RotateTransform/>
-                    <TranslateTransform X="0.917"/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
     </Grid>
 </Window>
