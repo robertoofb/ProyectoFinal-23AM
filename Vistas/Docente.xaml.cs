@@ -58,7 +58,7 @@ namespace ProyectoFinal_23AM.Vistas
             txtMateria.Clear();
             txtCalificacion.Clear();
         }
-
+        Calificaciones calificacioness = new Calificaciones();
         private void BtnAddCalif_Click(object sender, RoutedEventArgs e)
         {
             if (txtMatricula.Text == "")
@@ -67,21 +67,44 @@ namespace ProyectoFinal_23AM.Vistas
             }
             else
             {
-                Calificaciones calificaciones = new Calificaciones()
+                if(txtMateria.Text == "" || txtCalificacion.Text == "")
                 {
-                    FkMatricula = int.Parse(txtMatricula.Text),
-                    FkMateria = int.Parse(txtMateria.Text),
-                    FkGrado = int.Parse(txtGrado.Text),
-                    Calificación = decimal.Parse(txtCalificacion.Text)
-                };
+                    MessageBox.Show("Ingrese los datos completos");
+                }
+                else
+                {
+                    bool existe = servicess.ClaveExiste(int.Parse(txtMateria.Text));
 
-                servicess.AddCalificacion(calificaciones);
-                MessageBox.Show("Calificación agregada");
-                txtNombre.Clear();
-                txtGrado.Clear();
-                txtMatricula.Clear();
-                txtCalificacion.Clear();
-                txtMateria.Clear();
+                    if(!existe)
+                    {
+                        MessageBox.Show("Ingresa una clave válida");
+                    }
+                    else
+                    {
+                        if (int.Parse(txtCalificacion.Text) < 11 && int.Parse(txtCalificacion.Text) > 0)
+                        {
+                            Calificaciones calificaciones = new Calificaciones()
+                            {
+                                FkMatricula = int.Parse(txtMatricula.Text),
+                                FkMateria = int.Parse(txtMateria.Text),
+                                FkGrado = int.Parse(txtGrado.Text),
+                                Calificación = decimal.Parse(txtCalificacion.Text)
+                            };
+
+                            servicess.AddCalificacion(calificaciones);
+                            MessageBox.Show("Calificación agregada");
+                            txtNombre.Clear();
+                            txtGrado.Clear();
+                            txtMatricula.Clear();
+                            txtCalificacion.Clear();
+                            txtMateria.Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ingresa una calificación válida");
+                        }   
+                    }               
+                }
             }
         }
         private void BtnMaterias_Click(object sender, RoutedEventArgs e)

@@ -34,39 +34,52 @@ namespace ProyectoFinal_23AM.Vistas
         {
             if (txtPkUser.Text == "")
             {
-                Usuario usuario = new Usuario()
+                if (txtNombre.Text == "" || txtPassword.Text == "" || txtUsuario.Text == "")
                 {
-                    Nombre = txtNombre.Text,
-                    UserName = txtUsuario.Text,
-                    Password = txtPassword.Text,
-                    FkRol = 2
-                };
+                    MessageBox.Show("Ingrese los datos completos");
+                }
+                else
+                {
+                    Usuario usuario = new Usuario()
+                    {
+                        Nombre = txtNombre.Text,
+                        UserName = txtUsuario.Text,
+                        Password = txtPassword.Text,
+                        FkRol = 2
+                    };
 
-                services.AddUser(usuario);
-                MessageBox.Show("Administrador agregado");
-                txtNombre.Clear();
-                txtUsuario.Clear();
-                txtPassword.Clear();
-                GetUserTable();
+                    services.AddUser(usuario);
+                    MessageBox.Show("Administrador agregado");
+                    txtNombre.Clear();
+                    txtUsuario.Clear();
+                    txtPassword.Clear();
+                    GetUserTable();
+                }
             }
             else
             {
-                //hacer funcion editar y eliminar
-                int userId = Convert.ToInt32(txtPkUser.Text);
-                Usuario usuario = new Usuario()
+                if (txtNombre.Text == "" || txtPassword.Text == "" || txtUsuario.Text == "")
                 {
-                    PkUsuario = userId,
-                    Nombre = txtNombre.Text,
-                    UserName = txtUsuario.Text,
-                    Password = txtPassword.Text,
-                    FkRol = 2
-                };
-                services.UpdateUser(usuario);
-                MessageBox.Show("Administrador modificado");
-                txtNombre.Clear();
-                txtUsuario.Clear();
-                txtPassword.Clear();
-                GetUserTable();
+                    MessageBox.Show("Ingrese los datos completos");
+                }
+                else
+                {
+                    int userId = Convert.ToInt32(txtPkUser.Text);
+                    Usuario usuario = new Usuario()
+                    {
+                        PkUsuario = userId,
+                        Nombre = txtNombre.Text,
+                        UserName = txtUsuario.Text,
+                        Password = txtPassword.Text,
+                        FkRol = 2
+                    };
+                    services.UpdateUser(usuario);
+                    MessageBox.Show("Administrador modificado");
+                    txtNombre.Clear();
+                    txtUsuario.Clear();
+                    txtPassword.Clear();
+                    GetUserTable();
+                }
             }
         }
         public void EditItem(object sender, RoutedEventArgs e)

@@ -40,45 +40,59 @@ namespace ProyectoFinal_23AM.Vistas
         {
             if (txtPkMatricula.Text == "")
             {
-                Alumno alumno = new Alumno()
+                if(txtNombre.Text == "" || txtApellido.Text == "" || txtGrado.Text == "")
                 {
-                    Nombre = txtNombre.Text + " " + txtApellido.Text,
-                    FkGrado = int.Parse(txtGrado.Text)
-                };
-                if (alumno.FkGrado == 1 || alumno.FkGrado == 2 || alumno.FkGrado == 3 || alumno.FkGrado == 4 || alumno.FkGrado == 5 || alumno.FkGrado == 6)
-                {
-                    services.AddAlumno(alumno);
-                    MessageBox.Show("Alumno agregado");
-                    txtNombre.Clear();
-                    txtApellido.Clear();
-                    txtGrado.Clear();
-                    GetAlumnosTable();
-                    GetGradoTable();
+                    MessageBox.Show("Ingrese los datos completos");
                 }
                 else
                 {
-                    MessageBox.Show("Ingresa un grado del 1 al 6");
+                    Alumno alumno = new Alumno()
+                    {
+                        Nombre = txtNombre.Text + " " + txtApellido.Text,
+                        FkGrado = int.Parse(txtGrado.Text)
+                    };
+                    if (alumno.FkGrado > 0 && alumno.FkGrado < 7)
+                    {
+                        services.AddAlumno(alumno);
+                        MessageBox.Show("Alumno agregado");
+                        txtNombre.Clear();
+                        txtApellido.Clear();
+                        txtGrado.Clear();
+                        GetAlumnosTable();
+                        GetGradoTable();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ingresa un grado del 1 al 6");
+                    }
                 }
             }
             else
             {
-                int userId = Convert.ToInt32(txtPkMatricula.Text);
-                Alumno alumno = new Alumno()
+                if (txtNombre.Text == "" || txtApellido.Text == "" || txtGrado.Text == "")
                 {
-                    PkMatricula = userId,
-                    Nombre = txtNombre.Text + " " + txtApellido.Text,
-                    FkGrado = int.Parse(txtGrado.Text)
-                };
-                services.UpdateAlumno(alumno);
-                MessageBox.Show("Alumno modificado");
-                txtNombre.Clear();
-                txtApellido.Clear();
-                txtGrado.Clear();
-                LabelNombre.Visibility = Visibility.Hidden;
-                txtNombreCompleto.Visibility = Visibility.Hidden;
-                txtPkMatricula.Clear();
-                GetAlumnosTable();
-                GetGradoTable();
+                    MessageBox.Show("Ingrese los datos completos");
+                }
+                else
+                {
+                    int userId = Convert.ToInt32(txtPkMatricula.Text);
+                    Alumno alumno = new Alumno()
+                    {
+                        PkMatricula = userId,
+                        Nombre = txtNombre.Text + " " + txtApellido.Text,
+                        FkGrado = int.Parse(txtGrado.Text)
+                    };
+                    services.UpdateAlumno(alumno);
+                    MessageBox.Show("Alumno modificado");
+                    txtNombre.Clear();
+                    txtApellido.Clear();
+                    txtGrado.Clear();
+                    LabelNombre.Visibility = Visibility.Hidden;
+                    txtNombreCompleto.Visibility = Visibility.Hidden;
+                    txtPkMatricula.Clear();
+                    GetAlumnosTable();
+                    GetGradoTable();
+                }
             }
         }
         public void EditItem(object sender, RoutedEventArgs e)

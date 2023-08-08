@@ -36,5 +36,12 @@ namespace ProyectoFinal_23AM.Vistas
             main.Show();
             Close();
         }
+
+        private void BtnVolver_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            DocenteUpdate main = new DocenteUpdate();
+            main.Show();
+            Close();
+        }
     }
 }

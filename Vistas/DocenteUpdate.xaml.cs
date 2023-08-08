@@ -68,25 +68,55 @@ namespace ProyectoFinal_23AM.Vistas
             }
             else
             {
-                int userId = Convert.ToInt32(txtId.Text);
-                Calificaciones calificaciones = new Calificaciones()
+                if (txtMateria.Text == "" || txtCalificacion.Text == "")
                 {
-                    PkCalificaciones = userId,
-                    FkMatricula = int.Parse(txtMatricula.Text),
-                    FkMateria = int.Parse(txtMateria.Text),
-                    FkGrado = int.Parse(txtGrado.Text),
-                    Calificación = decimal.Parse(txtCalificacion.Text)
-                };
+                    MessageBox.Show("Ingrese los datos completos");
+                }
+                else
+                {
+                    bool existe = servicess.ClaveExiste(int.Parse(txtMateria.Text));
 
-                servicess.UpdateCalificacion(calificaciones);
-                MessageBox.Show("Calificación modificada");
-                GetCalificacionesTable();
-                txtId.Clear();
-                txtMateria.Clear();
-                txtCalificacion.Clear();
-                txtGrado.Clear();
-                txtMatricula.Clear();
+                    if (!existe)
+                    {
+                        MessageBox.Show("Ingresa una clave válida");
+                    }
+                    else
+                    {
+                        if(decimal.Parse(txtCalificacion.Text) <11 && decimal.Parse(txtCalificacion.Text) > 0)
+                        {
+                            int userId = Convert.ToInt32(txtId.Text);
+                            Calificaciones calificaciones = new Calificaciones()
+                            {
+                                PkCalificaciones = userId,
+                                FkMatricula = int.Parse(txtMatricula.Text),
+                                FkMateria = int.Parse(txtMateria.Text),
+                                FkGrado = int.Parse(txtGrado.Text),
+                                Calificación = decimal.Parse(txtCalificacion.Text)
+                            };
+
+                            servicess.UpdateCalificacion(calificaciones);
+                            MessageBox.Show("Calificación modificada");
+                            GetCalificacionesTable();
+                            txtId.Clear();
+                            txtMateria.Clear();
+                            txtCalificacion.Clear();
+                            txtGrado.Clear();
+                            txtMatricula.Clear();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ingresa una calificación válida");
+                        }
+                    }
+                }
             }
+        }
+
+        private void BtnMaterias_Click(object sender, RoutedEventArgs e)
+        {
+            DocenteMaterias docente = new DocenteMaterias();
+            docente.Show();
+            Close();
         }
     }
 }

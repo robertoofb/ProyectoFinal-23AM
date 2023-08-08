@@ -27,6 +27,7 @@ namespace ProyectoFinal_23AM.Vistas
         }
         AlumnadoServices services = new AlumnadoServices();
         ObservacionesServices servicess = new ObservacionesServices();
+        CalificacionesServices alumno = new CalificacionesServices();
         private void BtnVolver_Click(object sender, RoutedEventArgs e)
         {
             MainWindow main = new MainWindow();
@@ -41,10 +42,18 @@ namespace ProyectoFinal_23AM.Vistas
         {
             UserTableO.ItemsSource = servicess.GetObservaciones(txtNombre.Text);
         }
-        private void BtnMaterias_Click(object sender, RoutedEventArgs e)
+        private void BtnBuscar_Click(object sender, RoutedEventArgs e)
         {
-            GetCalificacionesTable();
-            GetObservacionesTable();
+            bool existe = alumno.AlumnoExiste(txtNombre.Text);
+            if(!existe)
+            {
+                MessageBox.Show("Alumno no encontrado");
+            }
+            else
+            {
+                GetCalificacionesTable();
+                GetObservacionesTable();
+            }
         }
         public void EditItem(object sender, RoutedEventArgs e)
         {

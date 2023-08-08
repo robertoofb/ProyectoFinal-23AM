@@ -34,39 +34,53 @@ namespace ProyectoFinal_23AM.Vistas
         {
             if(txtPkUser.Text == "")
             {
-                Usuario usuario = new Usuario()
+                if(txtNombre.Text == "" || txtPassword.Text == "" || txtUserName.Text == "" || SelectRol.SelectedValue == null) 
                 {
-                    Nombre = txtNombre.Text,
-                    UserName = txtUserName.Text,
-                    Password = txtPassword.Text,
-                    FkRol = int.Parse(SelectRol.SelectedValue.ToString())
-                };
+                    MessageBox.Show("Ingrese los datos completos");
+                }
+                else
+                {
+                    Usuario usuario = new Usuario()
+                    {
+                        Nombre = txtNombre.Text,
+                        UserName = txtUserName.Text,
+                        Password = txtPassword.Text,
+                        FkRol = int.Parse(SelectRol.SelectedValue.ToString())
+                    };
 
-                services.AddUser(usuario);
-                MessageBox.Show("Usuario agregado");
-                txtNombre.Clear();
-                txtUserName.Clear();
-                txtPassword.Clear();
-                GetUserTable();
+                    services.AddUser(usuario);
+                    MessageBox.Show("Usuario agregado");
+                    txtNombre.Clear();
+                    txtUserName.Clear();
+                    txtPassword.Clear();
+                    GetUserTable();
+                }
             }
             else
             {
                 //hacer funcion editar y eliminar
-                int userId = Convert.ToInt32(txtPkUser.Text);
-                Usuario usuario = new Usuario()
+                if (txtNombre.Text == "" || txtPassword.Text == "" || txtUserName.Text == "" || SelectRol.SelectedValue == null)
                 {
-                    PkUsuario = userId,
-                    Nombre= txtNombre.Text,
-                    UserName = txtUserName.Text,
-                    Password = txtPassword.Text,
-                    FkRol = int.Parse(SelectRol.SelectedValue.ToString())
-                };
-                services.UpdateUser(usuario);
-                MessageBox.Show("Usuario modificado");
-                txtNombre.Clear();
-                txtUserName.Clear();
-                txtPassword.Clear();
-                GetUserTable();
+                    MessageBox.Show("Ingrese los datos completos");
+                }
+                else
+                {
+                    int userId = Convert.ToInt32(txtPkUser.Text);
+                    Usuario usuario = new Usuario()
+                    {
+                        PkUsuario = userId,
+                        Nombre = txtNombre.Text,
+                        UserName = txtUserName.Text,
+                        Password = txtPassword.Text,
+                        FkRol = int.Parse(SelectRol.SelectedValue.ToString())
+                    };
+                    services.UpdateUser(usuario);
+                    MessageBox.Show("Usuario modificado");
+                    txtNombre.Clear();
+                    txtUserName.Clear();
+                    txtPassword.Clear();
+                    GetUserTable();
+                }
             }
         }
         public void EditItem(object sender, RoutedEventArgs e)

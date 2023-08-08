@@ -47,16 +47,23 @@ namespace ProyectoFinal_23AM.Vistas
 
         private void BtnAddObs_Click(object sender, RoutedEventArgs e)
         {
-            Observaciones observaciones = new Observaciones()
+            if(txtObservación.Text == "" || txtMatricula.Text == "")
             {
-                FkMatricula = int.Parse(txtMatricula.Text),
-                Observación = txtObservación.Text
-            };
+                MessageBox.Show("Selecciona una calificación y agrega la observación");
+            }
+            else
+            {
+                Observaciones observaciones = new Observaciones()
+                {
+                    FkMatricula = int.Parse(txtMatricula.Text),
+                    Observación = txtObservación.Text
+                };
 
-            servicess.AddObservación(observaciones);
-            MessageBox.Show("Observación agregada, será visible para el tutor del alumno");
-            txtMatricula.Clear();
-            txtObservación.Clear();
+                servicess.AddObservación(observaciones);
+                MessageBox.Show("Observación agregada, será visible para el tutor del alumno");
+                txtMatricula.Clear();
+                txtObservación.Clear();
+            }  
         }
     }
 }

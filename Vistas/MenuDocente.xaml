@@ -7,13 +7,36 @@
         mc:Ignorable="d"
         Title="MenuDocente" Height="650" Width="500"
         WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style x:Key="LabelStyle1" TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Top"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Label}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="true" CornerRadius="25">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid Background="#FF7AA5D2">
         <Button x:Name="BtnUpdateCalif" Content="" HorizontalAlignment="Left" Height="59" Margin="125,396,0,0" VerticalAlignment="Top" Width="76" BorderThickness="0,0,0,0" RenderTransformOrigin="0.5,0.5" Click="BtnUpdateCalif_Click" >
             <Button.Background>
                 <ImageBrush ImageSource="/MainWindowImages/calif.png"/>
             </Button.Background>
         </Button>
-        <Label FontSize="36" Content="Bienvenido Docente" HorizontalAlignment="Center" Height="79" Margin="0,92,0,0" VerticalAlignment="Top" Foreground="White" Background="#FF6BA4E0" BorderThickness="3,3,3,3" BorderBrush="White" Width="342" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Style="{DynamicResource LabelStyle1}" FontSize="36" Content="Bienvenido Docente" HorizontalAlignment="Center" Height="79" Margin="0,92,0,0" VerticalAlignment="Top" Foreground="White" Background="#FF6BA4E0" BorderThickness="3,3,3,3" BorderBrush="White" Width="342" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Button x:Name="BtnVolver" Content="" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" VerticalAlignment="Top" Width="38" BorderThickness="0,0,0,0" Click="BtnVolver_Click">
             <Button.Background>
                 <ImageBrush ImageSource="/MainWindowImages/volver-flecha.png"/>

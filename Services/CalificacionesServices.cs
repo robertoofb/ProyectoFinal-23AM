@@ -94,5 +94,19 @@ namespace ProyectoFinal_23AM.Services
                 throw new Exception("Sucedió un error " + ex.Message);
             }
         }
+        public bool ClaveExiste(int clave)
+        {
+            using (var _context = new ApplicationDbContext())
+            {
+                return _context.materias.Any(x => x.PkMateria == clave);
+            }
+        }
+        public bool AlumnoExiste(string alumno)
+        {
+            using (var _context = new ApplicationDbContext())
+            {
+                return _context.calificaciones.Any(x => x.Alumnos.Nombre == alumno);
+            }
+        }
     }
 }
